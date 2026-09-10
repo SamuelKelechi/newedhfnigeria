@@ -1,0 +1,584 @@
+/* =========================================================
+   SERVICE SECTION
+========================================================= */
+
+.serviceContainer {
+  position: relative;
+
+  width: 100%;
+
+  padding: 5px 0 110px;
+
+  display: flex;
+  justify-content: center;
+
+  overflow: hidden;
+
+  /*
+    Soft transition from the white Welcome section
+    into the service area.
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      rgba(248, 249, 252, 0.95) 18%,
+      #f6f7fa 55%,
+      #f8f8fb 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.serviceContainer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  left: -260px;
+  top: 100px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 51, 153, 0.025);
+
+  filter: blur(15px);
+
+  pointer-events: none;
+}
+
+.serviceContainer::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: -220px;
+  bottom: 30px;
+
+  border-radius: 50%;
+
+  background: rgba(58, 181, 74, 0.025);
+
+  filter: blur(15px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.serviceContainerWrapper {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.serviceContainerHeader {
+  margin: 0 0 10px;
+
+  color: #003399;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+.serviceContainerSubheader {
+  margin: 5px 0 0;
+
+  color: #333333;
+
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   SERVICE CARD HOLDER
+========================================================= */
+
+.serviceCardHolder {
+  width: 100%;
+
+  margin-top: 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.serviceCards {
+  position: relative;
+
+  min-height: 340px;
+
+  padding: 38px 22px 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  border-radius: 18px;
+
+  /*
+    Soft white cards against the
+    slightly grey service background.
+  */
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 8px 25px rgba(30, 40, 70, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  animation: serviceCardReveal 0.8s ease-out both;
+}
+
+
+/*
+  Small green decorative line
+  at the top of each card.
+*/
+
+.serviceCards::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 0;
+  height: 3px;
+
+  border-radius: 0 0 5px 5px;
+
+  background: #3ab54a;
+
+  transform: translateX(-50%);
+
+  transition: width 0.4s ease;
+}
+
+
+/* Card hover */
+
+.serviceCards:hover {
+  transform: translateY(-9px);
+
+  border-color: rgba(58, 181, 74, 0.12);
+
+  box-shadow:
+    0 18px 38px rgba(30, 40, 70, 0.11);
+}
+
+.serviceCards:hover::before {
+  width: 55px;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.serviceIcons {
+  width: 58px;
+
+  height: 58px;
+
+  object-fit: contain;
+
+  margin-bottom: 2px;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.serviceCards:hover .serviceIcons {
+  transform:
+    translateY(-4px)
+    scale(1.08);
+
+  filter:
+    drop-shadow(0 7px 10px rgba(0, 0, 0, 0.08));
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.serviceCardHeader {
+  width: 100%;
+
+  margin: 18px 0 0;
+
+  color: #333333;
+
+  font-size: 1.12rem;
+
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.serviceCardParagraph {
+  margin: 15px 0 0;
+
+  color: #606060;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes serviceCardReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* Stagger the cards */
+
+.serviceCards:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.serviceCards:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.serviceCards:nth-child(3) {
+  animation-delay: 0.25s;
+}
+
+.serviceCards:nth-child(4) {
+  animation-delay: 0.35s;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media screen and (max-width: 1100px) {
+
+  .serviceContainer {
+    padding: 80px 0 90px;
+  }
+
+  .serviceCardHolder {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+
+  .serviceCards {
+    min-height: 310px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .serviceContainer {
+    padding: 70px 0 80px;
+  }
+
+  .serviceContainerWrapper {
+    width: 90%;
+  }
+
+  .serviceContainerHeader {
+    font-size: 14px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .serviceContainerSubheader {
+    font-size: clamp(
+      1.9rem,
+      6vw,
+      2.5rem
+    );
+  }
+
+  .serviceCardHolder {
+    margin-top: 35px;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .serviceCards {
+    min-height: 320px;
+
+    padding: 34px 20px 30px;
+  }
+
+  .serviceIcons {
+    width: 55px;
+
+    height: 55px;
+  }
+
+  .serviceCardHeader {
+    font-size: 1.05rem;
+  }
+
+  .serviceCardParagraph {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 650px) {
+
+  .serviceContainer {
+
+    padding: 55px 0 65px;
+
+    /*
+      Slightly brighter mobile background.
+    */
+    background:
+      linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #f7f8fa 35%,
+        #f6f7fa 100%
+      );
+  }
+
+  .serviceContainerWrapper {
+    width: 90%;
+  }
+
+  .serviceContainerHeader {
+    font-size: 13px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .serviceContainerSubheader {
+    font-size: clamp(
+      1.75rem,
+      8vw,
+      2.15rem
+    );
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+  }
+
+  .serviceCardHolder {
+    margin-top: 30px;
+
+    grid-template-columns: 1fr;
+
+    gap: 17px;
+  }
+
+  .serviceCards {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 35px 22px 32px;
+
+    border-radius: 16px;
+  }
+
+  .serviceIcons {
+    width: 55px;
+
+    height: 55px;
+  }
+
+  .serviceCardHeader {
+    font-size: 1.05rem;
+
+    margin-top: 17px;
+  }
+
+  .serviceCardParagraph {
+    max-width: 500px;
+
+    margin-top: 13px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 400px) {
+
+  .serviceContainer {
+    padding: 45px 0 55px;
+  }
+
+  .serviceContainerWrapper {
+    width: 92%;
+  }
+
+  .serviceContainerHeader {
+    font-size: 12px;
+
+    letter-spacing: 1px;
+  }
+
+  .serviceContainerSubheader {
+    font-size: 1.7rem;
+  }
+
+  .serviceCardHolder {
+    gap: 14px;
+
+    margin-top: 25px;
+  }
+
+  .serviceCards {
+    padding: 30px 18px;
+
+    border-radius: 14px;
+  }
+
+  .serviceIcons {
+    width: 50px;
+
+    height: 50px;
+  }
+
+  .serviceCardHeader {
+    font-size: 1rem;
+  }
+
+  .serviceCardParagraph {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .serviceCards {
+    animation: none;
+  }
+
+  .serviceCards,
+  .serviceCards::before,
+  .serviceIcons {
+    transition: none;
+  }
+
+}

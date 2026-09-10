@@ -1,0 +1,846 @@
+/* =========================================================
+   UPCOMING EVENTS
+========================================================= */
+
+.eventSection {
+  position: relative;
+
+  width: 100%;
+
+  padding: 10px 0 70px;
+
+  display: flex;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  /* Smooth continuation from previous section */
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #fbfcfd 50%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.eventSection::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  right: -280px;
+  top: 20px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 51, 153, 0.025);
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+.eventSection::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  left: -250px;
+  bottom: -200px;
+
+  border-radius: 50%;
+
+  background: rgba(58, 181, 74, 0.025);
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.eventWrapper {
+  position: relative;
+
+  z-index: 2;
+
+  /*
+    IMPORTANT:
+    Keep the same width as the other homepage sections.
+  */
+  width: 90%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.eventHeader {
+  margin-bottom: 20px;
+
+  animation:
+    eventHeaderReveal 0.7s ease-out both;
+}
+
+
+.eventTag {
+  margin: 0 0 7px;
+
+  color: #003399;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.2px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+
+.eventTitle {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: clamp(
+    1.8rem,
+    3vw,
+    2.4rem
+  );
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   EVENTS LIST
+========================================================= */
+
+.eventsList {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 23px;
+}
+
+
+/* =========================================================
+   EVENT ROW
+========================================================= */
+
+.eventItem {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    220px 1fr;
+
+  align-items: center;
+
+  gap: 5px;
+
+  animation:
+    eventReveal 0.65s ease-out both;
+}
+
+
+.eventItem:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+
+.eventItem:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+
+/* =========================================================
+   EVENT IMAGE
+========================================================= */
+
+.eventImageWrapper {
+  position: relative;
+
+  width: 220px;
+
+  height: 148px;
+
+  overflow: hidden;
+
+  border-radius: 21px;
+
+  z-index: 2;
+}
+
+
+.eventImage {
+  object-fit: cover;
+
+  object-position: top;
+
+  transition:
+    transform 0.5s ease;
+}
+
+
+.eventItem:hover .eventImage {
+  transform:
+    scale(1.04);
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.eventCard {
+  position: relative;
+
+  min-height: 148px;
+
+  padding: 28px 24px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.96
+  );
+
+  border: 1px solid
+    rgba(226, 232, 240, 0.75);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 7px 16px
+    rgba(15, 23, 42, 0.12);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.eventItem:hover .eventCard {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(0, 51, 153, 0.12);
+
+  box-shadow:
+    0 14px 28px
+    rgba(15, 23, 42, 0.13);
+}
+
+
+/* =========================================================
+   TOP INFORMATION
+========================================================= */
+
+.eventCardTop {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 8px;
+}
+
+
+.eventMetaGroup {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   META PILL
+========================================================= */
+
+.eventMeta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-height: 25px;
+
+  padding: 5px 10px;
+
+  border: 1px solid
+    #e2e8f0;
+
+  border-radius: 30px;
+
+  color: #596273;
+
+  background: #ffffff;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+
+.eventMeta svg {
+  width: 15px;
+
+  height: 15px;
+
+  flex-shrink: 0;
+
+  color: #7695cc;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.eventPrice {
+  flex-shrink: 0;
+
+  color: #555555;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   EVENT CONTENT
+========================================================= */
+
+.eventCardContent {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.eventName {
+  margin: 0 0 7px;
+
+  color: #333333;
+
+  font-size: clamp(
+    1.3rem,
+    2.3vw,
+    1.65rem
+  );
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.eventLocation {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #666666;
+
+  font-size: 10px;
+}
+
+
+.eventLocation svg {
+  width: 15px;
+
+  height: 15px;
+
+  flex-shrink: 0;
+
+  color: #7695cc;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+
+.pageNumbers {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.paginationArrow,
+.pageNumber {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.paginationArrow {
+  width: 30px;
+
+  height: 30px;
+
+  color: #333333;
+}
+
+
+.paginationArrow svg {
+  width: 18px;
+
+  height: 18px;
+}
+
+
+.paginationArrow:hover:not(:disabled) {
+  transform:
+    translateX(3px);
+}
+
+
+.paginationArrow:first-child:hover:not(:disabled) {
+  transform:
+    translateX(-3px);
+}
+
+
+.paginationArrow:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+.pageNumber {
+  width: 30px;
+
+  height: 30px;
+
+  border: 1px solid
+    #d8dde5;
+
+  border-radius: 50%;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+.pageNumber:hover {
+  border-color:
+    #003399;
+
+  color: #003399;
+}
+
+
+.pageNumberActive {
+  background: #003399;
+
+  border-color: #003399;
+
+  color: #ffffff;
+}
+
+
+.pageNumberActive:hover {
+  color: #ffffff;
+
+  background: #003399;
+
+  border-color: #003399;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes eventHeaderReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes eventReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .eventSection {
+    padding: 60px 0 65px;
+  }
+
+  .eventWrapper {
+    width: 90%;
+  }
+
+  .eventItem {
+    grid-template-columns:
+      190px 1fr;
+  }
+
+  .eventImageWrapper {
+    width: 190px;
+
+    height: 140px;
+  }
+
+  .eventCard {
+    min-height: 140px;
+
+    padding: 24px 20px;
+  }
+
+  .eventName {
+    font-size: 1.35rem;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 750px) {
+
+  .eventSection {
+    padding: 55px 0 65px;
+  }
+
+  .eventWrapper {
+    width: 90%;
+  }
+
+  .eventItem {
+    grid-template-columns:
+      160px 1fr;
+
+    gap: 0;
+  }
+
+  .eventImageWrapper {
+    width: 160px;
+
+    height: 135px;
+
+    border-radius: 18px;
+  }
+
+  .eventCard {
+    min-height: 135px;
+
+    padding: 20px 17px;
+
+    border-radius: 18px;
+  }
+
+  .eventMeta {
+    font-size: 8px;
+
+    padding: 4px 7px;
+  }
+
+  .eventMeta svg {
+    width: 13px;
+
+    height: 13px;
+  }
+
+  .eventName {
+    font-size: 1.2rem;
+  }
+
+  .eventLocation {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .eventSection {
+    padding: 50px 0 60px;
+  }
+
+  .eventWrapper {
+    width: 90%;
+  }
+
+  .eventTag {
+    font-size: 11px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .eventTitle {
+    font-size:
+      clamp(1.65rem, 7vw, 2rem);
+  }
+
+  .eventHeader {
+    margin-bottom: 25px;
+  }
+
+  .eventsList {
+    gap: 20px;
+  }
+
+  /* Stack image above card */
+
+  .eventItem {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+  }
+
+  .eventImageWrapper {
+    width: 100%;
+
+    height: 190px;
+
+    border-radius: 18px;
+
+    margin-bottom: -12px;
+  }
+
+  .eventCard {
+    z-index: 3;
+
+    min-height: auto;
+
+    padding: 24px 18px 20px;
+
+    border-radius: 18px;
+  }
+
+  .eventCardTop {
+    align-items: flex-start;
+
+    margin-bottom: 10px;
+  }
+
+  .eventMetaGroup {
+    gap: 5px;
+  }
+
+  .eventMeta {
+    font-size: 8px;
+
+    padding: 4px 7px;
+  }
+
+  .eventPrice {
+    font-size: 11px;
+  }
+
+  .eventName {
+    font-size: 1.25rem;
+
+    line-height: 1.2;
+  }
+
+  .eventLocation {
+    font-size: 9px;
+  }
+
+  .pagination {
+    margin-top: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .eventSection {
+    padding: 45px 0 55px;
+  }
+
+  .eventWrapper {
+    width: 90%;
+  }
+
+  .eventImageWrapper {
+    height: 170px;
+  }
+
+  .eventCard {
+    padding: 21px 15px 18px;
+  }
+
+  .eventCardTop {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .eventMetaGroup {
+    width: 100%;
+  }
+
+  .eventPrice {
+    align-self: flex-start;
+  }
+
+  .eventName {
+    font-size: 1.15rem;
+  }
+
+  .eventLocation {
+    align-items: flex-start;
+
+    font-size: 8.5px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .eventHeader,
+  .eventItem {
+    animation: none;
+  }
+
+  .eventImage,
+  .eventCard,
+  .paginationArrow,
+  .pageNumber {
+    transition: none;
+  }
+
+}

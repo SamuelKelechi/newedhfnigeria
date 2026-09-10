@@ -1,0 +1,1270 @@
+/* =========================================================
+   CONTACT PAGE
+   EDHF
+========================================================= */
+
+.mainContainer {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0) 72%,
+      rgba(255, 255, 255, 0.35) 84%,
+      rgba(255, 255, 255, 0.7) 94%,
+      #ffffff 100%
+    ),
+    linear-gradient(
+      to right,
+      #d8dce6 0%,
+      #e4e7ee 10%,
+      #f2f3f7 25%,
+      #ffffff 45%,
+      #ffffff 55%,
+      #f7f2fa 75%,
+      #efe6f5 90%,
+      #e8dcf0 100%
+    );
+
+  color: #292929;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.firstContainer {
+  width: 90%;
+  max-width: 1440px;
+  min-height: 330px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.insideFirstContainer {
+  width: 55%;
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  animation: contactHeroText 900ms ease-out both;
+}
+
+.firstPara {
+  margin: 0 0 8px;
+
+  color: #333333;
+
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.4;
+
+  font-weight: 500;
+}
+
+.firstHeader {
+  max-width: 560px;
+
+  margin: 0;
+  padding: 0;
+
+  color: #303030;
+
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  line-height: 1.08;
+
+  font-weight: 700;
+
+  letter-spacing: -0.04em;
+}
+
+.firstHeader span {
+  color: #003399;
+}
+
+
+/* =========================================================
+   HERO GRAPHIC
+========================================================= */
+
+.insideFirstContainer2 {
+  width: 45%;
+  min-height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: contactHeroGraphic 1000ms ease-out 120ms both;
+}
+
+.roundedFullContainer {
+  width: 250px;
+  height: 250px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roundedFullInnerContainer {
+  width: 242px;
+  height: 242px;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(120, 160, 245, 0.28);
+  border-radius: 50%;
+}
+
+.roundedFullInnermostContainer {
+  width: 202px;
+  height: 202px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(120, 160, 245, 0.35);
+  border-radius: 50%;
+}
+
+.innerCircleContainer {
+  width: 164px;
+  height: 164px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(120, 160, 245, 0.45);
+  border-radius: 50%;
+}
+
+.greenCircleContainer {
+  width: 132px;
+  height: 132px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.green-circle {
+  width: 132px;
+  height: 132px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #36b94a;
+
+  box-shadow:
+    0 12px 30px rgba(54, 185, 74, 0.18);
+
+  animation: greenCirclePulse 3s ease-in-out infinite;
+}
+
+.messageIcon {
+  width: 54px;
+  height: 54px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FLOATING INDICATORS
+========================================================= */
+
+.indicatorDot,
+.indicatorDotOrange,
+.indicatorDotPurple {
+  width: 26px;
+  height: 26px;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.12);
+
+  z-index: 5;
+}
+
+.indicatorDot {
+  left: 48px;
+  top: 48px;
+
+  background: #29a9df;
+
+  animation: floatingDot 3s ease-in-out infinite;
+}
+
+.indicatorDotOrange {
+  right: 15px;
+  top: 78px;
+
+  background: #f15a29;
+
+  animation: floatingDot 3.4s ease-in-out 0.4s infinite;
+}
+
+.indicatorDotPurple {
+  left: 28px;
+  bottom: 42px;
+
+  background: #a855e8;
+
+  animation: floatingDot 3.2s ease-in-out 0.8s infinite;
+}
+
+.textIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   FLOATING PILL
+========================================================= */
+
+.floatingPill {
+  position: absolute;
+
+  right: -5px;
+  bottom: 48px;
+
+  min-width: 112px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  column-gap: 7px;
+
+  padding: 5px 13px;
+
+  border: 1px solid rgba(220, 220, 220, 0.7);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 7px 16px rgba(0, 0, 0, 0.12);
+
+  z-index: 10;
+
+  animation: floatingPill 3.5s ease-in-out infinite;
+}
+
+.shakeIcon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.labelStyle {
+  color: #3d3d3d;
+
+  font-size: 11px;
+  line-height: 1;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SECOND SECTION
+========================================================= */
+
+.secondContainer {
+  width: 100%;
+  max-width: 1310px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 55px;
+
+  padding: 18px 6.5% 35px;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.containerSplit {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contentBox {
+  width: 100%;
+  min-height: 105px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 0;
+}
+
+
+/* =========================================================
+   GET IN TOUCH
+   INCREASED FROM 17PX
+========================================================= */
+
+.headingStyle {
+  margin: 0 0 7px;
+
+  color: #003399;
+
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+
+/* MAIN CONTACT HEADING */
+
+.secondHeading {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #292929;
+
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contentBox2 {
+  width: 100%;
+  min-height: 270px;
+
+  display: flex;
+  align-items: center;
+}
+
+.contentArea {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 5px;
+}
+
+.insideContentArea {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  transition:
+    transform 300ms ease,
+    opacity 300ms ease;
+}
+
+.insideContentArea:hover {
+  transform: translateX(7px);
+}
+
+.contentItem {
+  width: 58px;
+  min-width: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: #3b393b;
+}
+
+.contentItem svg {
+  width: 24px;
+  height: 24px;
+
+  stroke-width: 2.3;
+}
+
+.contentText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+/* CONTACT LABEL */
+
+.contentText h1 {
+  margin: 0 0 5px;
+
+  color: #3e3b3e;
+
+  font-size: 0.82rem;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+
+/* CONTACT VALUE */
+
+.contentText p {
+  margin: 0;
+
+  color: #4b484b;
+
+  font-size: clamp(0.88rem, 1vw, 1rem);
+  line-height: 1.5;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+========================================================= */
+
+.socialContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 8px;
+}
+
+.follow {
+  margin: 0 0 10px;
+
+  color: #003399;
+
+  font-size: 0.95rem;
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.socialCircle {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #999999;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease;
+}
+
+.socialCircle:hover {
+  transform: translateY(-4px);
+
+  background: #003399;
+}
+
+.socialCircle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.iconSize {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.halfContainerForm {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  padding-top: 50px;
+}
+
+.formBox {
+  display: none;
+}
+
+.formHeader {
+  width: 100%;
+
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================================
+   SEND US A MESSAGE
+   INCREASED FROM 22PX
+========================================================= */
+
+.message {
+  margin: 0;
+
+  color: #292929;
+
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM INPUT ROW
+========================================================= */
+
+.firstInputRow {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+.inputRow {
+  width: 100%;
+  height: 42px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 7px;
+
+  background: rgba(217, 224, 239, 0.78);
+
+  padding: 0 16px;
+
+  color: #333333;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.inputRow::placeholder {
+  color: #858993;
+
+  opacity: 1;
+
+  font-size: 0.82rem;
+}
+
+.inputRow:focus {
+  background: #e4e9f4;
+
+  box-shadow:
+    0 0 0 2px rgba(0, 51, 153, 0.08);
+}
+
+
+/* =========================================================
+   MESSAGE BOX
+========================================================= */
+
+.textAreaContainer {
+  width: 100%;
+  height: 140px;
+
+  margin-top: 0;
+}
+
+.largeBox {
+  width: 100%;
+  height: 100%;
+
+  resize: none;
+
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+
+  background: rgba(217, 224, 239, 0.78);
+
+  padding: 14px 16px;
+
+  color: #333333;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.largeBox::placeholder {
+  color: #858993;
+
+  opacity: 1;
+
+  font-size: 0.82rem;
+}
+
+.largeBox:focus {
+  background: #e4e9f4;
+
+  box-shadow:
+    0 0 0 2px rgba(0, 51, 153, 0.08);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.btn {
+  width: 100%;
+  height: 38px;
+
+  margin-top: 15px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 999px;
+
+  background: #36b94a;
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.btn:hover {
+  background: #2fa742;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 16px rgba(54, 185, 74, 0.22);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MAP SECTION
+========================================================= */
+
+.bannerContainer {
+  width: 100%;
+  max-width: 1310px;
+
+  margin: 0 auto;
+
+  padding: 0 6.5%;
+
+  display: flex;
+  align-items: center;
+}
+
+.thinBar {
+  width: 100%;
+}
+
+.bannerContent {
+  margin: 0;
+
+  color: #292929;
+
+  font-size: 21px;
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+.mapContainer {
+  width: 100%;
+  max-width: 1310px;
+
+  height: 400px;
+
+  margin: 0 auto;
+
+  padding: 12px 6.5% 45px;
+}
+
+.insideMapContainer {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.mapContent {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes contactHeroText {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contactHeroGraphic {
+  from {
+    opacity: 0;
+    transform: translateX(35px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes greenCirclePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes floatingDot {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes floatingPill {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .firstContainer {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .secondContainer {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .bannerContainer {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .mapContainer {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .firstContainer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .firstHeader {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .secondContainer {
+    column-gap: 30px;
+
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .bannerContainer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .mapContainer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .firstContainer {
+    min-height: 500px;
+
+    flex-direction: column;
+
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .insideFirstContainer,
+  .insideFirstContainer2 {
+    width: 100%;
+  }
+
+  .insideFirstContainer {
+    min-height: auto;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .firstHeader {
+    max-width: 650px;
+  }
+
+  .insideFirstContainer2 {
+    min-height: 280px;
+  }
+
+  .secondContainer {
+    grid-template-columns: 1fr;
+
+    row-gap: 35px;
+
+    padding-top: 15px;
+  }
+
+  .containerSplit {
+    width: 100%;
+  }
+
+  .halfContainerForm {
+    width: 100%;
+
+    padding-top: 0;
+  }
+
+  .contentBox {
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .secondHeading {
+    max-width: 600px;
+
+    text-align: center;
+  }
+
+  .contentBox2 {
+    justify-content: center;
+  }
+
+  .contentArea {
+    max-width: 420px;
+
+    margin: 0 auto;
+  }
+
+  .socialContainer {
+    align-items: center;
+  }
+
+  .follow {
+    margin-left: 0;
+  }
+
+  .mapContainer {
+    height: 280px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .firstContainer {
+    min-height: 500px;
+
+    padding: 35px 20px 15px;
+  }
+
+  .firstPara {
+    font-size: 18px;
+  }
+
+  .firstHeader {
+    font-size: 2.65rem;
+
+    line-height: 1.08;
+  }
+
+  .roundedFullContainer {
+    width: 220px;
+    height: 220px;
+  }
+
+  .roundedFullInnerContainer {
+    width: 215px;
+    height: 215px;
+  }
+
+  .roundedFullInnermostContainer {
+    width: 180px;
+    height: 180px;
+  }
+
+  .innerCircleContainer {
+    width: 148px;
+    height: 148px;
+  }
+
+  .greenCircleContainer,
+  .green-circle {
+    width: 118px;
+    height: 118px;
+  }
+
+  .green-circle svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .indicatorDot {
+    left: 38px;
+    top: 40px;
+  }
+
+  .indicatorDotOrange {
+    right: 3px;
+    top: 58px;
+  }
+
+  .indicatorDotPurple {
+    left: 18px;
+    bottom: 38px;
+  }
+
+  .floatingPill {
+    right: -5px;
+    bottom: 42px;
+  }
+
+  .secondContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    row-gap: 40px;
+  }
+
+
+  /* GET IN TOUCH */
+
+  .headingStyle {
+    font-size: 18px;
+  }
+
+
+  /* MAIN HEADING */
+
+  .secondHeading {
+    font-size: 21px;
+  }
+
+
+  /* CONTACT DETAILS */
+
+  .contentArea {
+    max-width: 100%;
+  }
+
+  .insideContentArea {
+    min-height: 80px;
+  }
+
+  .contentText h1 {
+    font-size: 11px;
+  }
+
+  .contentText p {
+    font-size: 13px;
+  }
+
+
+  /* FORM HEADING */
+
+  .message {
+    font-size: 22px;
+  }
+
+
+  /* INPUTS */
+
+  .firstInputRow {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+
+    margin-bottom: 9px;
+  }
+
+  .inputRow {
+    height: 42px;
+
+    font-size: 13px;
+  }
+
+  .inputRow::placeholder {
+    font-size: 11px;
+  }
+
+
+  /* MESSAGE */
+
+  .textAreaContainer {
+    height: 150px;
+  }
+
+  .largeBox {
+    font-size: 13px;
+  }
+
+  .largeBox::placeholder {
+    font-size: 11px;
+  }
+
+
+  /* BUTTON */
+
+  .btn {
+    height: 38px;
+
+    font-size: 13px;
+  }
+
+
+  /* MAP */
+
+  .bannerContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .bannerContent {
+    font-size: 19px;
+  }
+
+  .mapContainer {
+    height: 250px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .firstContainer {
+    min-height: 480px;
+  }
+
+  .firstPara {
+    font-size: 16px;
+  }
+
+  .firstHeader {
+    font-size: 2.35rem;
+  }
+
+  .roundedFullContainer {
+    transform: scale(0.9);
+  }
+
+  .headingStyle {
+    font-size: 17px;
+  }
+
+  .secondHeading {
+    font-size: 20px;
+  }
+
+  .contentText p {
+    font-size: 12px;
+  }
+
+  .message {
+    font-size: 20px;
+  }
+
+  .mapContainer {
+    height: 220px;
+  }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}

@@ -1,0 +1,526 @@
+/* =========================================================
+   NEWSLETTER SECTION
+========================================================= */
+
+.newsletterSection {
+  width: 100%;
+  padding: 5px 0 65px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.newsletterWrapper {
+  width: 90%;
+  max-width: 1120px;
+
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 55px 40px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(248, 249, 251, 0.98),
+      rgba(255, 255, 255, 1)
+    );
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 35px rgba(15, 23, 42, 0.035);
+
+  animation: newsletterReveal 0.8s ease-out both;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND DECORATION
+========================================================= */
+
+.newsletterWrapper::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -150px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(30, 95, 187, 0.035);
+
+  filter: blur(5px);
+
+  pointer-events: none;
+}
+
+
+.newsletterWrapper::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  bottom: -150px;
+  left: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(58, 181, 74, 0.035);
+
+  filter: blur(5px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.newsletterContent {
+  width: 100%;
+  max-width: 985px;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.newsletterTag {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #003399;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  line-height: 1;
+
+  animation:
+    newsletterTagReveal
+    0.7s
+    0.2s
+    ease-out
+    both;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.newsletterTitle {
+  margin: 0 auto;
+
+  max-width: 900px;
+
+  color: #333333;
+
+  font-size: clamp(
+    1rem,
+    2.2vw,
+    1.65rem
+  );
+
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.8px;
+
+  animation:
+    newsletterTitleReveal
+    0.8s
+    0.3s
+    ease-out
+    both;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.newsletterForm {
+  width: 100%;
+
+  max-width: 900px;
+
+  height: 60px;
+
+  margin: 42px auto 0;
+
+  display: flex;
+
+  align-items: stretch;
+
+  border: 1px solid #777777;
+
+  border-radius: 45px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  animation:
+    newsletterFormReveal
+    0.8s
+    0.45s
+    ease-out
+    both;
+}
+
+
+.newsletterForm:focus-within {
+  border-color: #003399;
+
+  box-shadow:
+    0 0 0 4px rgba(0, 51, 153, 0.08);
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.newsletterForm input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 28px;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-family: inherit;
+
+  font-size: 1.25rem;
+}
+
+
+.newsletterForm input::placeholder {
+  color: #666666;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.newsletterForm button {
+  width: 148px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  background: #3ab54a;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 1.25rem;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.25s ease;
+}
+
+
+.newsletterForm button:hover {
+  background: #2fa63f;
+}
+
+
+.newsletterForm button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes newsletterReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes newsletterTagReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes newsletterTitleReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes newsletterFormReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .newsletterSection {
+    padding: 40px 0 55px;
+  }
+
+  .newsletterWrapper {
+    width: 90%;
+    min-height: 360px;
+
+    padding: 50px 30px;
+
+    border-radius: 26px;
+  }
+
+  .newsletterTitle {
+    font-size: clamp(
+      1.8rem,
+      4vw,
+      2.3rem
+    );
+  }
+
+  .newsletterForm {
+    height: 68px;
+
+    margin-top: 35px;
+  }
+
+  .newsletterForm input {
+    font-size: 1.05rem;
+  }
+
+  .newsletterForm button {
+    width: 135px;
+
+    font-size: 1.05rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .newsletterSection {
+    padding: 30px 0 45px;
+  }
+
+  .newsletterWrapper {
+    width: 90%;
+
+    min-height: auto;
+
+    padding: 45px 18px;
+
+    border-radius: 22px;
+  }
+
+  .newsletterTag {
+    font-size: 12px;
+
+    letter-spacing: 2.3px;
+
+    margin-bottom: 14px;
+  }
+
+  .newsletterTitle {
+    font-size: 1.7rem;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.4px;
+  }
+
+  .desktopBreak {
+    display: none;
+  }
+
+  /*
+     Stack the input and button
+     on smaller screens.
+  */
+
+  .newsletterForm {
+    height: auto;
+
+    margin-top: 30px;
+
+    flex-direction: column;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+  }
+
+  .newsletterForm input {
+    width: 100%;
+
+    height: 58px;
+
+    padding: 0 18px;
+
+    font-size: 1rem;
+  }
+
+  .newsletterForm button {
+    width: 100%;
+
+    height: 55px;
+
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .newsletterWrapper {
+    width: 92%;
+
+    padding: 38px 15px;
+  }
+
+  .newsletterTitle {
+    font-size: 1.5rem;
+  }
+
+  .newsletterForm {
+    margin-top: 25px;
+  }
+
+  .newsletterForm input {
+    height: 54px;
+
+    font-size: 0.95rem;
+  }
+
+  .newsletterForm button {
+    height: 52px;
+
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .newsletterWrapper,
+  .newsletterTag,
+  .newsletterTitle,
+  .newsletterForm {
+    animation: none;
+  }
+
+  .newsletterForm,
+  .newsletterForm button {
+    transition: none;
+  }
+}

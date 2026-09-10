@@ -1,0 +1,1010 @@
+/* =========================================================
+   PROJECT SECTION
+========================================================= */
+
+.projectsSection {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 5px 0 110px;
+
+  overflow: hidden;
+
+  /*
+    Smooth continuation from Services.
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      #f8f8fb 0%,
+      #ffffff 18%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.projectsSection::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  left: -280px;
+  top: 150px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 51, 153, 0.025);
+
+  filter: blur(15px);
+
+  pointer-events: none;
+}
+
+.projectsSection::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: -230px;
+  bottom: 80px;
+
+  border-radius: 50%;
+
+  background: rgba(58, 181, 74, 0.025);
+
+  filter: blur(15px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION WRAPPER
+========================================================= */
+
+.projectsSectionWrapper {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.sectionTag {
+  margin: 0 0 10px;
+
+  color: #003399;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  margin: 5px 0 0;
+
+  color: #333333;
+
+  font-size: clamp(
+    2rem,
+    3.2vw,
+    2.8rem
+  );
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.projectsWrapper {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+
+  margin-top: 45px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.projectCard {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.06);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  animation: projectCardReveal 0.7s ease-out both;
+}
+
+
+/* Card top accent */
+
+.projectCard::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 0;
+  height: 3px;
+
+  border-radius: 0 0 5px 5px;
+
+  background: #3ab54a;
+
+  transform: translateX(-50%);
+
+  transition: width 0.4s ease;
+
+  z-index: 2;
+}
+
+
+/* Hover */
+
+.projectCard:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(0, 51, 153, 0.08);
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.11);
+}
+
+.projectCard:hover::before {
+  width: 55px;
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 190px;
+
+  border-radius: 13px;
+
+  overflow: hidden;
+
+  margin-bottom: 17px;
+
+  background: #f1f3f6;
+}
+
+.projectImage {
+  object-fit: cover;
+
+  object-position: top;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.06);
+
+  filter: brightness(1.03);
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.projectCard h3 {
+  margin: 0 3px 7px;
+
+  color: #0f172a;
+
+  font-size: 1rem;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PROJECT SUBTITLE
+========================================================= */
+
+.projectCard p {
+  margin: 0 3px;
+
+  color: #64748b;
+
+  font-size: 0.86rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CARD ANIMATION
+========================================================= */
+
+@keyframes projectCardReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+.projectCard:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.projectCard:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.projectCard:nth-child(3) {
+  animation-delay: 0.25s;
+}
+
+.projectCard:nth-child(4) {
+  animation-delay: 0.35s;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 45px;
+}
+
+
+/* Page number */
+
+.pageNumber {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #d8dee8;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pageNumber:hover {
+  border-color: #1e40af;
+
+  color: #1e40af;
+
+  transform: translateY(-2px);
+}
+
+
+/* Active */
+
+.pageNumberActive {
+  background: #1e40af;
+
+  color: #ffffff;
+
+  border-color: #1e40af;
+
+  box-shadow:
+    0 7px 16px rgba(30, 64, 175, 0.18);
+}
+
+.pageNumberActive:hover {
+  color: #ffffff;
+
+  background: #1e40af;
+
+  transform: translateY(-2px);
+}
+
+
+/* Arrows */
+
+.arrow {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #d8dee8;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #1e40af;
+
+  border-color: #1e40af;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.modalOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 25px;
+
+  background:
+    rgba(15, 23, 42, 0.68);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  animation: fadeIn 0.25s ease both;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.modalContent {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 900px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 40px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.2);
+
+  animation: slideUp 0.35s ease both;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.closeBtn {
+  position: absolute;
+
+  top: 18px;
+
+  right: 18px;
+
+  z-index: 90;
+
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #334155;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.closeBtn:hover {
+  background: #e2e8f0;
+
+  color: #0f172a;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL IMAGE
+========================================================= */
+
+.modalImageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 320px;
+
+  margin-bottom: 28px;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background: #f6f7f9;
+}
+
+.projectImage2 {
+  object-fit: contain;
+
+  padding: 5px;
+}
+
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.modalTitle {
+  margin: 0 0 20px;
+
+  color: #0f172a;
+
+  font-size: 1.65rem;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MODAL TEXT
+========================================================= */
+
+.modalText p {
+  margin: 0 0 17px;
+
+  color: #475569;
+
+  font-size: 0.96rem;
+
+  line-height: 1.85;
+}
+
+.modalText p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   MODAL ANIMATIONS
+========================================================= */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes slideUp {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(40px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .projectsSection {
+    padding: 80px 0 90px;
+  }
+
+  .projectsWrapper {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .imageWrapper {
+    height: 200px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .projectsSection {
+    padding: 70px 0 80px;
+  }
+
+  .projectsSectionWrapper {
+    width: 90%;
+  }
+
+  .sectionTag {
+    font-size: 14px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .sectionTitle {
+    font-size:
+      clamp(1.9rem, 6vw, 2.5rem);
+  }
+
+  .projectsWrapper {
+    margin-top: 35px;
+
+    gap: 18px;
+  }
+
+  .projectCard {
+    padding: 12px;
+
+    border-radius: 16px;
+  }
+
+  .imageWrapper {
+    height: 190px;
+
+    margin-bottom: 15px;
+  }
+
+  .projectCard h3 {
+    font-size: 0.98rem;
+  }
+
+  .projectCard p {
+    font-size: 0.84rem;
+  }
+
+
+  /* Modal */
+
+  .modalOverlay {
+    padding: 18px;
+  }
+
+  .modalContent {
+    max-height: 92vh;
+
+    padding: 28px 22px;
+
+    border-radius: 18px;
+  }
+
+  .modalImageWrapper {
+    height: 230px;
+
+    margin-bottom: 22px;
+  }
+
+  .modalTitle {
+    font-size: 1.4rem;
+  }
+
+  .modalText p {
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .projectsSection {
+    padding: 55px 0 65px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #f8f9fb 45%,
+        #f8f9fb 100%
+      );
+  }
+
+  .projectsSectionWrapper {
+    width: 90%;
+  }
+
+  .sectionTag {
+    font-size: 13px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .sectionTitle {
+    font-size:
+      clamp(1.75rem, 8vw, 2.15rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+  }
+
+  .projectsWrapper {
+    grid-template-columns: 1fr;
+
+    gap: 17px;
+
+    margin-top: 28px;
+  }
+
+  .projectCard {
+    padding: 12px;
+
+    border-radius: 15px;
+  }
+
+  .imageWrapper {
+    height: 210px;
+
+    border-radius: 12px;
+  }
+
+  .projectCard h3 {
+    font-size: 1rem;
+
+    margin-top: 2px;
+  }
+
+  .projectCard p {
+    font-size: 0.85rem;
+  }
+
+
+  /* Pagination */
+
+  .pagination {
+    gap: 7px;
+
+    margin-top: 32px;
+  }
+
+  .pageNumber,
+  .arrow {
+    width: 37px;
+
+    height: 37px;
+
+    font-size: 0.8rem;
+  }
+
+
+  /* Modal */
+
+  .modalOverlay {
+    padding: 10px;
+  }
+
+  .modalContent {
+    width: 100%;
+
+    max-height: 94vh;
+
+    padding: 20px 16px;
+
+    border-radius: 17px;
+  }
+
+  .closeBtn {
+    top: 12px;
+
+    right: 12px;
+
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 15px;
+  }
+
+  .modalImageWrapper {
+    height: 190px;
+
+    margin-bottom: 18px;
+
+    border-radius: 13px;
+  }
+
+  .modalTitle {
+    padding-right: 35px;
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+  }
+
+  .modalText p {
+    font-size: 0.87rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .projectsSection {
+    padding: 45px 0 55px;
+  }
+
+  .projectsSectionWrapper {
+    width: 92%;
+  }
+
+  .sectionTag {
+    font-size: 12px;
+
+    letter-spacing: 1px;
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+
+  .imageWrapper {
+    height: 185px;
+  }
+
+  .projectCard {
+    padding: 10px;
+  }
+
+  .projectCard h3 {
+    font-size: 0.95rem;
+  }
+
+  .projectCard p {
+    font-size: 0.82rem;
+  }
+
+  .pagination {
+    gap: 5px;
+  }
+
+  .pageNumber,
+  .arrow {
+    width: 35px;
+
+    height: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .projectCard {
+    animation: none;
+  }
+
+  .projectCard,
+  .projectCard::before,
+  .projectImage,
+  .pageNumber,
+  .arrow,
+  .closeBtn {
+    transition: none;
+  }
+
+  .modalOverlay,
+  .modalContent {
+    animation: none;
+  }
+}

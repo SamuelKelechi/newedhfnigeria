@@ -1,0 +1,913 @@
+/* =========================================================
+   EDHF FOOTER
+========================================================= */
+
+.footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(76, 175, 80, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 100%,
+      rgba(76, 175, 80, 0.06),
+      transparent 28%
+    ),
+    #292929;
+
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  z-index: 10;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND GLOW
+========================================================= */
+
+.footerGlow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -240px;
+  left: -180px;
+
+  background: rgba(76, 175, 80, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  pointer-events: none;
+
+  animation: footerGlowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes footerGlowMove {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(100px, 40px, 0);
+  }
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.footerContainer {
+  position: relative;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+
+  padding: 42px 40px 25px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.footerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-bottom: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.footerLogoSection {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+
+.footerLogoWrapper {
+  position: relative;
+
+  width: 68px;
+  height: 68px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.footerLogoWrapper:hover {
+  transform: translateY(-4px) rotate(3deg);
+
+  box-shadow:
+    0 0 0 6px rgba(76, 175, 80, 0.1),
+    0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+.logoRing {
+  position: absolute;
+  inset: -4px;
+
+  border: 1px solid rgba(76, 175, 80, 0.45);
+
+  border-radius: 50%;
+
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+}
+
+
+.footerLogo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.footerBrandText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.footerOrgName {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.35;
+
+  font-weight: 650;
+
+  letter-spacing: -0.2px;
+
+  color: #ffffff;
+}
+
+
+.footerBrandTag {
+  color: #8f8f8f;
+
+  font-size: 12px;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.footerSocialIcons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+
+.footerSocialLink {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #9c9c9c;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footerSocialLink:hover {
+  color: #ffffff;
+
+  background: #4caf50;
+
+  border-color: #4caf50;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 20px rgba(76, 175, 80, 0.2);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.footerDivider {
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.13),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.footerMainContent {
+  display: grid;
+
+  grid-template-columns:
+    minmax(130px, 0.8fr)
+    minmax(230px, 1.2fr)
+    minmax(300px, 1.7fr);
+
+  gap: 70px;
+
+  padding: 48px 0;
+}
+
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   COLUMN HEADINGS
+========================================================= */
+
+.columnHeading {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+}
+
+
+.columnHeading > span {
+  width: 24px;
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: #4caf50;
+}
+
+
+.footerColumnTitle {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
+
+.footerLinkList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.footerLink {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: fit-content;
+  min-width: 120px;
+
+  padding: 6px 0;
+
+  color: #a9a9a9;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footerLink::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 2px;
+
+  width: 0;
+  height: 1px;
+
+  background: #4caf50;
+
+  transition: width 0.3s ease;
+}
+
+
+.footerLink:hover {
+  color: #ffffff;
+
+  transform: translateX(5px);
+}
+
+
+.footerLink:hover::after {
+  width: 100%;
+}
+
+
+.linkArrow {
+  margin-left: 15px;
+
+  color: #4caf50;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footerLink:hover .linkArrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footerContactInfo {
+  display: flex;
+  flex-direction: column;
+
+  gap: 23px;
+}
+
+
+.footerContactItem {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 13px;
+}
+
+
+.contactIconWrapper {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(76, 175, 80, 0.1);
+
+  color: #4caf50;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footerContactItem:hover .contactIconWrapper {
+  background: #4caf50;
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+}
+
+
+.footerContactIcon {
+  flex-shrink: 0;
+}
+
+
+.footerContactText {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.contactLabel {
+  margin-bottom: 2px;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.2px;
+
+  font-weight: 700;
+}
+
+
+.footerGreenText {
+  color: #d1d1d1;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  transition: color 0.3s ease;
+}
+
+
+.footerContactItem:hover .footerGreenText {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletterText {
+  max-width: 390px;
+
+  margin: -5px 0 18px;
+
+  color: #8f8f8f;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.footerNewsletterForm {
+  width: 100%;
+}
+
+
+.emailWrapper {
+  display: flex;
+
+  width: 100%;
+
+  padding: 4px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 40px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.emailWrapper:focus-within {
+  border-color: rgba(76, 175, 80, 0.7);
+
+  box-shadow:
+    0 0 0 4px rgba(76, 175, 80, 0.07);
+}
+
+
+.footerEmailInput {
+  min-width: 0;
+
+  flex: 1;
+
+  padding: 12px 17px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+}
+
+
+.footerEmailInput::placeholder {
+  color: #707070;
+}
+
+
+.footerSubmitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+
+  padding: 11px 19px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #4caf50;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.footerSubmitButton span {
+  font-size: 16px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.footerSubmitButton:hover {
+  background: #58bb5c;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(76, 175, 80, 0.22);
+}
+
+
+.footerSubmitButton:hover span {
+  transform: translateX(4px);
+}
+
+
+.footerSubmitButton:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footerCopyright {
+  padding-top: 22px;
+
+  text-align: center;
+}
+
+
+.footerCopyright p {
+  margin: 0;
+
+  color: #707070;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+.footerCurveLink {
+  color: #bdbdbd;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.footerCurveLink:hover {
+  color: #4caf50;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .footerContainer {
+    padding: 38px 30px 23px;
+  }
+
+
+  .footerMainContent {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+  }
+
+
+  .footerColumn:last-child {
+    grid-column: 1 / -1;
+
+    max-width: 600px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .footerContainer {
+    padding: 35px 20px 22px;
+  }
+
+
+  .footerHeader {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 25px;
+  }
+
+
+  .footerLogoSection {
+    flex-direction: column;
+
+    gap: 13px;
+  }
+
+
+  .footerBrandText {
+    align-items: center;
+  }
+
+
+  .footerOrgName {
+    font-size: 17px;
+
+    line-height: 1.4;
+  }
+
+
+  .footerBrandTag {
+    font-size: 11px;
+  }
+
+
+  .footerSocialIcons {
+    gap: 8px;
+  }
+
+
+  .footerSocialLink {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .footerMainContent {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding: 40px 0;
+  }
+
+
+  .footerColumn:last-child {
+    grid-column: auto;
+
+    max-width: none;
+  }
+
+
+  .footerColumn {
+    width: 100%;
+  }
+
+
+  .footerLinkList {
+    gap: 4px;
+  }
+
+
+  .footerLink {
+    width: 100%;
+    max-width: 220px;
+  }
+
+
+  .newsletterText {
+    max-width: 100%;
+  }
+
+
+  .emailWrapper {
+    padding: 4px;
+  }
+
+
+  .footerEmailInput {
+    padding-left: 14px;
+
+    font-size: 12px;
+  }
+
+
+  .footerSubmitButton {
+    padding: 11px 16px;
+  }
+
+
+  .footerCopyright {
+    padding-top: 20px;
+  }
+
+
+  .footerCopyright p {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .footerContainer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+  .footerLogoWrapper {
+    width: 62px;
+    height: 62px;
+  }
+
+
+  .footerOrgName {
+    font-size: 16px;
+  }
+
+
+  .footerBrandTag {
+    font-size: 10px;
+  }
+
+
+  .emailWrapper {
+    flex-direction: column;
+
+    border-radius: 18px;
+
+    padding: 5px;
+  }
+
+
+  .footerEmailInput {
+    width: 100%;
+
+    padding: 13px 14px;
+  }
+
+
+  .footerSubmitButton {
+    width: 100%;
+
+    border-radius: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer *,
+  .footerGlow,
+  .logoRing {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}

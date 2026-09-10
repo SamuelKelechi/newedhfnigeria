@@ -1,0 +1,643 @@
+/* =========================================================
+   EDHF HEADER
+   Designed to blend naturally with the Hero section
+========================================================= */
+
+.navbar-header {
+  position: relative;
+  z-index: 1000;
+
+  width: 100%;
+
+  padding: 18px 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*
+    Header gradient intentionally matches
+    the Hero gradient so both sections
+    visually flow into one another.
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 45%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(
+      to right,
+      #d8dce6 0%,
+      #e4e7ee 10%,
+      #f2f3f7 25%,
+      #ffffff 45%,
+      #ffffff 55%,
+      #f7f2fa 75%,
+      #efe6f5 90%,
+      #e8dcf0 100%
+    );
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: relative;
+
+  width: 90%;
+  max-width: 1400px;
+
+  min-height: 72px;
+
+  margin: 0 auto;
+
+  padding: 10px 10px 10px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 50px;
+
+  /*
+    Soft glass effect
+  */
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    0 8px 30px rgba(31, 38, 135, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+
+  animation: navbarReveal 0.7s ease-out both;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 0.55rem;
+
+  text-decoration: none;
+
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: translateY(-1px);
+}
+
+.navbar-logo-icon {
+  width: 42px;
+  height: 42px;
+
+  display: block;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  margin-left: 0;
+}
+
+.navbar-logo-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.1;
+}
+
+.navbar-logo-title {
+  font-size: 1.15rem;
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
+
+  color: var(--black);
+}
+
+.navbar-logo-subtitle {
+  margin-top: 2px;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  color: #626274;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: clamp(1.7rem, 3vw, 3rem);
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navbar-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 2px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  color: var(--black);
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: var(--edhf-blue);
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: var(--edhf-blue);
+
+  transform: translateY(-1px);
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Active link */
+
+.navbar-link--active {
+  color: var(--edhf-blue);
+  font-weight: 600;
+}
+
+.navbar-link--active::after {
+  transform: scaleX(0.65);
+}
+
+
+/* =========================================================
+   DONATE BUTTON
+========================================================= */
+
+.navbar-donate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 110px;
+
+  padding: 0.7rem 1.8rem;
+
+  margin-right: 0;
+
+  border-radius: 50px;
+
+  background-color: var(--edhf-green);
+
+  color: var(--white);
+
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 7px 18px rgba(76, 175, 80, 0.16);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar-donate-btn:hover {
+  background-color: var(--edhf-green-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(76, 175, 80, 0.25);
+}
+
+.navbar-donate-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.navbar-menu-btn {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  color: var(--black);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.navbar-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+
+  color: var(--edhf-blue);
+
+  transform: scale(1.04);
+}
+
+.navbar-menu-btn:active {
+  transform: scale(0.96);
+}
+
+.navbar-menu-btn svg {
+  width: 23px;
+  height: 23px;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.navbar-mobile-menu {
+  position: absolute;
+
+  z-index: 999;
+
+  top: calc(100% - 5px);
+
+  left: 50%;
+
+  width: 90%;
+  max-width: 500px;
+
+  transform: translateX(-50%);
+
+  padding: 14px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 18px 45px rgba(31, 38, 135, 0.12);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  animation: mobileMenuReveal 0.3s ease-out both;
+}
+
+.navbar-mobile-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navbar-mobile-link {
+  position: relative;
+
+  display: block;
+
+  padding: 13px 15px;
+
+  border-radius: 12px;
+
+  color: var(--black);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.navbar-mobile-link:hover {
+  background-color: rgba(30, 95, 187, 0.06);
+
+  color: var(--edhf-blue);
+
+  padding-left: 20px;
+}
+
+.navbar-mobile-link--active {
+  color: var(--edhf-blue);
+
+  background-color: rgba(30, 95, 187, 0.06);
+
+  font-weight: 600;
+}
+
+
+/* Mobile Donate */
+
+.navbar-mobile-donate-btn {
+  display: block;
+
+  margin-top: 8px;
+
+  padding: 13px 20px;
+
+  border-radius: 50px;
+
+  background-color: var(--edhf-green);
+
+  color: var(--white);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 18px rgba(76, 175, 80, 0.15);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar-mobile-donate-btn:hover {
+  background-color: var(--edhf-green-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(76, 175, 80, 0.23);
+}
+
+
+/* =========================================================
+   HEADER ANIMATIONS
+========================================================= */
+
+@keyframes navbarReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileMenuReveal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .navbar {
+    width: 92%;
+
+    padding-left: 14px;
+  }
+
+  .navbar-links {
+    gap: 1.5rem;
+  }
+
+  .navbar-link {
+    font-size: 0.9rem;
+  }
+
+  .navbar-donate-btn {
+    min-width: 95px;
+
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .navbar-header {
+    padding-top: 12px;
+    padding-bottom: 14px;
+  }
+
+  .navbar {
+    width: 92%;
+
+    min-height: 64px;
+
+    padding: 8px 9px 8px 13px;
+
+    border-radius: 40px;
+  }
+
+  .navbar-logo-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar-logo-title {
+    font-size: 1.05rem;
+  }
+
+  .navbar-logo-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-donate-btn {
+    display: none;
+  }
+
+  .navbar-menu-btn {
+    display: flex;
+  }
+
+  .navbar-mobile-menu {
+    width: 92%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .navbar-header {
+    padding-top: 9px;
+    padding-bottom: 10px;
+  }
+
+  .navbar {
+    width: 92%;
+
+    min-height: 60px;
+
+    padding: 7px 8px 7px 12px;
+  }
+
+  .navbar-logo {
+    gap: 0.4rem;
+  }
+
+  .navbar-logo-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-logo-title {
+    font-size: 1rem;
+  }
+
+  .navbar-logo-subtitle {
+    font-size: 0.68rem;
+  }
+
+  .navbar-menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-menu-btn svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .navbar-mobile-menu {
+    top: calc(100% - 2px);
+
+    width: 92%;
+
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .navbar-mobile-menu {
+    animation: none;
+  }
+
+  .navbar-logo,
+  .navbar-link,
+  .navbar-link::after,
+  .navbar-donate-btn,
+  .navbar-menu-btn,
+  .navbar-mobile-link,
+  .navbar-mobile-donate-btn {
+    transition: none;
+  }
+}

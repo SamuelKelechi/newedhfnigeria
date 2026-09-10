@@ -1,0 +1,777 @@
+/* =========================================================
+   TESTIMONIAL SECTION
+========================================================= */
+
+.testimonialSection {
+  width: 100%;
+
+  padding: 5px 0 75px;
+
+  display: flex;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.testimonialWrapper {
+  width: 90%;
+
+  max-width: 1120px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.95fr 1.05fr;
+
+  gap: 65px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.testimonialIntro {
+  position: relative;
+
+  min-width: 0;
+}
+
+
+.sectionTag {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #003399;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.8px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+
+.sectionTitle {
+  max-width: 570px;
+
+  margin: 0;
+
+  color: #333333;
+
+  font-size: clamp(
+    1.2rem,
+    2vw,
+    2.35rem
+  );
+
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -0.5px;
+
+  white-space: pre-line;
+}
+
+
+.sectionDescription {
+  max-width: 590px;
+
+  margin: 20px 0 0;
+
+  color: #666666;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DECORATIVE QUOTE
+========================================================= */
+
+.decorativeQuote {
+  width: 150px;
+
+  height: 100px;
+
+  margin-top: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  opacity: 0.22;
+
+  color: #ff9d83;
+
+  font-size: 105px;
+
+  line-height: 1;
+
+  transform: rotate(-12deg);
+}
+
+
+.decorativeQuote span {
+  display: block;
+
+  font-family: Georgia, serif;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: -8px;
+
+  width: 100%;
+
+  max-width: 430px;
+}
+
+
+.pageNumbers {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.paginationArrow {
+  width: 32px;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.paginationArrow:hover:not(:disabled) {
+  color: #003399;
+
+  transform: translateX(3px);
+}
+
+
+.paginationArrow:first-child:hover:not(:disabled) {
+  transform: translateX(-3px);
+}
+
+
+.paginationArrow:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PAGE NUMBER
+========================================================= */
+
+.pageNumber {
+  width: 46px;
+
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid #d2d6dc;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.25s ease;
+}
+
+
+.pageNumber:hover {
+  border-color: #003399;
+
+  color: #003399;
+
+  transform: translateY(-2px);
+}
+
+
+.pageNumberActive {
+  background: #003399;
+
+  border-color: #003399;
+
+  color: #ffffff;
+}
+
+
+.pageNumberActive:hover {
+  background: #003399;
+
+  border-color: #003399;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   RIGHT TESTIMONIAL LIST
+========================================================= */
+
+.testimonialList {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL ITEM
+========================================================= */
+
+.testimonialCard {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 120px;
+
+  padding: 15px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  border-radius: 28px;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+
+/* =========================================================
+   ACTIVE / MIDDLE CARD
+========================================================= */
+
+.testimonialCardActive {
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 32px
+    rgba(15, 23, 42, 0.09);
+
+  padding: 22px 28px;
+}
+
+
+.testimonialCard:hover {
+  transform: translateY(-2px);
+}
+
+
+.testimonialCardActive:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 17px 38px
+    rgba(15, 23, 42, 0.11);
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.testimonialAvatar {
+  position: relative;
+
+  width: 90px;
+
+  height: 90px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #079bd3;
+}
+
+
+.avatarImage {
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+
+.testimonialCard:hover .avatarImage {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   TESTIMONIAL CONTENT
+========================================================= */
+
+.testimonialContent {
+  flex: 1;
+
+  min-width: 0;
+
+  padding-top: 1px;
+}
+
+
+.testimonialName {
+  margin: 0 0 7px;
+
+  color: #333333;
+
+  font-size: 1.10rem;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.testimonialCardActive .testimonialName {
+  color: #003399;
+}
+
+
+.testimonialText {
+  margin: 0;
+
+  max-width: 500px;
+
+  color: #666666;
+
+  font-size: 0.75rem;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   QUOTE ICON
+========================================================= */
+
+.quoteIcon {
+  flex-shrink: 0;
+
+  align-self: flex-start;
+
+  margin-top: 3px;
+
+  color: #333333;
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+
+  font-weight: 600;
+
+  line-height: 0.65;
+
+  letter-spacing: -7px;
+}
+
+
+.testimonialCardActive .quoteIcon {
+  color: #003399;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .testimonialWrapper {
+    gap: 45px;
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+
+  .sectionDescription {
+    font-size: 0.95rem;
+  }
+
+
+  .testimonialCard {
+    gap: 18px;
+
+    padding: 14px;
+  }
+
+
+  .testimonialCardActive {
+    padding: 20px;
+  }
+
+
+  .testimonialAvatar {
+    width: 88px;
+
+    height: 88px;
+  }
+
+
+  .testimonialName {
+    font-size: 1.2rem;
+  }
+
+
+  .testimonialText {
+    font-size: 0.88rem;
+  }
+
+
+  .quoteIcon {
+    font-size: 34px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .testimonialSection {
+    padding: 55px 0 65px;
+  }
+
+
+  .testimonialWrapper {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+
+  .testimonialIntro {
+    text-align: center;
+  }
+
+
+  .sectionTitle {
+    max-width: 700px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .sectionDescription {
+    max-width: 680px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .decorativeQuote {
+    margin: 25px auto 0;
+  }
+
+
+  .pagination {
+    margin:
+      10px auto 0;
+  }
+
+
+  .testimonialList {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .testimonialSection {
+    padding: 50px 0 60px;
+  }
+
+
+  .testimonialWrapper {
+    width: 90%;
+
+    gap: 35px;
+  }
+
+
+  .sectionTag {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .sectionTitle {
+    font-size:
+      clamp(1.65rem, 7vw, 2rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -0.3px;
+  }
+
+
+  .sectionDescription {
+    margin-top: 17px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+  }
+
+
+  .decorativeQuote {
+    width: 100px;
+
+    height: 70px;
+
+    font-size: 75px;
+
+    margin-top: 18px;
+  }
+
+
+  .testimonialList {
+    gap: 12px;
+  }
+
+
+  .testimonialCard {
+    min-height: auto;
+
+    padding: 15px 5px;
+
+    gap: 13px;
+
+    border-radius: 20px;
+  }
+
+
+  .testimonialCardActive {
+    padding: 18px 15px;
+  }
+
+
+  .testimonialAvatar {
+    width: 68px;
+
+    height: 68px;
+  }
+
+
+  .testimonialName {
+    font-size: 1.05rem;
+
+    margin-bottom: 5px;
+  }
+
+
+  .testimonialText {
+    font-size: 0.82rem;
+
+    line-height: 1.45;
+  }
+
+
+  .quoteIcon {
+    position: absolute;
+
+    top: 15px;
+
+    right: 12px;
+
+    font-size: 29px;
+  }
+
+
+  .pageNumber {
+    width: 40px;
+
+    height: 40px;
+
+    font-size: 12px;
+  }
+
+
+  .paginationArrow {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .testimonialWrapper {
+    width: 92%;
+  }
+
+
+  .testimonialCard {
+    padding: 14px 3px;
+  }
+
+
+  .testimonialCardActive {
+    padding: 17px 13px;
+  }
+
+
+  .testimonialAvatar {
+    width: 60px;
+
+    height: 60px;
+  }
+
+
+  .testimonialName {
+    font-size: 0.98rem;
+  }
+
+
+  .testimonialText {
+    font-size: 0.76rem;
+  }
+
+
+  .quoteIcon {
+    font-size: 27px;
+
+    right: 10px;
+  }
+
+
+  .pageNumber {
+    width: 36px;
+
+    height: 36px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .testimonialCard,
+  .avatarImage,
+  .paginationArrow,
+  .pageNumber {
+    transition: none;
+  }
+}

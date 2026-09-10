@@ -1,0 +1,973 @@
+/* =========================================================
+   ABOUT HERO SECTION
+========================================================= */
+
+.herosection {
+  position: relative;
+
+  width: 100%;
+  max-width: 1440px;
+
+  min-height: 500px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  /*
+    Very subtle background so the hero blends
+    naturally with the white header.
+  */
+   background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 10%,
+
+      rgba(255, 255, 255, 0) 72%,
+      rgba(255, 255, 255, 0.35) 84%,
+      rgba(255, 255, 255, 0.7) 94%,
+      #ffffff 100%
+    ),
+    linear-gradient(
+      to right,
+      #d8dce6 0%,
+      #e4e7ee 10%,
+      #f2f3f7 25%,
+      #ffffff 45%,
+      #ffffff 55%,
+      #f7f2fa 75%,
+      #efe6f5 90%,
+      #e8dcf0 100%
+    );
+}
+
+/* =========================================================
+   HERO WRAPPER
+========================================================= */
+
+.herosectionWrapper {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.herosectionTexts {
+  width: 48%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  color: #333333;
+
+  animation:
+    heroTextReveal
+    0.8s
+    0.1s
+    ease-out
+    both;
+}
+
+
+.herosectionTexts h1 {
+  margin: 0;
+
+  color: #333333;
+
+  font-size:
+    clamp(2.8rem, 5.2vw, 4rem);
+
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -1.5px;
+}
+
+
+.herosectionTexts h1 span {
+  color: #003399;
+}
+
+
+.herosectionTexts p {
+  max-width: 480px;
+
+  margin: 18px 0 0;
+
+  color: #333333;
+
+  font-size:
+    clamp(1.40rem, 1.35vw, 1.2rem);
+
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.herosectionImage {
+  width: 48%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  animation:
+    heroImageReveal
+    0.9s
+    0.15s
+    ease-out
+    both;
+}
+
+
+.herosectionImage img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 520px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  animation:
+    heroImageFloat
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   WHATSAPP / CONTACT BUTTON
+========================================================= */
+
+.herosectionContact {
+  position: absolute;
+
+  z-index: 10;
+
+  right: 0;
+
+  bottom: 0;
+
+  width: 160px;
+
+  height: 90px;
+
+  padding: 10px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  background: #ffffff;
+
+  border-radius:
+    70px 0 0 70px;
+
+  animation:
+    contactReveal
+    0.8s
+    0.5s
+    ease-out
+    both;
+}
+
+
+.herosectionContact > div {
+  width: 70px;
+
+  height: 70px;
+
+  padding: 4px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+
+  border: 1px solid #cfcfcf;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 5px
+    rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.herosectionContact > div:hover {
+  transform: scale(1.06);
+
+  box-shadow:
+    0 5px 12px
+    rgba(0, 0, 0, 0.16);
+}
+
+
+.herosectionContact svg {
+  width: 41px;
+
+  height: 41px;
+
+  display: block;
+}
+
+
+/* =========================================================
+   HERO ANIMATIONS
+========================================================= */
+
+@keyframes heroTextReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+@keyframes heroImageReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(30px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+  }
+
+}
+
+
+@keyframes heroImageFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-6px);
+  }
+
+}
+
+
+@keyframes contactReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .herosection {
+    min-height: 620px;
+  }
+
+  .herosectionWrapper {
+    width: 90%;
+
+    gap: 40px;
+  }
+
+  .herosectionTexts h1 {
+    font-size:
+      clamp(2.7rem, 4.5vw, 3.5rem);
+  }
+
+  .herosectionTexts p {
+    max-width: 430px;
+
+    font-size: 1.05rem;
+  }
+
+  .herosectionImage img {
+    max-width: 480px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 960px) {
+
+  .herosection {
+    min-height: 560px;
+  }
+
+  .herosectionWrapper {
+    width: 90%;
+
+    gap: 30px;
+  }
+
+  .herosectionTexts {
+    width: 50%;
+  }
+
+  .herosectionImage {
+    width: 50%;
+  }
+
+  .herosectionTexts h1 {
+    font-size: 3rem;
+
+    line-height: 1.12;
+  }
+
+  .herosectionTexts p {
+    max-width: 390px;
+
+    margin-top: 15px;
+
+    font-size: 1rem;
+
+    line-height: 1.65;
+  }
+
+  .herosectionImage img {
+    max-width: 430px;
+  }
+
+  .herosectionContact {
+    width: 145px;
+
+    height: 82px;
+
+    padding:
+      8px 16px;
+  }
+
+  .herosectionContact > div {
+    width: 64px;
+
+    height: 64px;
+  }
+
+  .herosectionContact svg {
+    width: 38px;
+
+    height: 38px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .herosection {
+    min-height: auto;
+
+    padding:
+      70px 0 105px;
+  }
+
+  .herosectionWrapper {
+    width: 90%;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 32px;
+  }
+
+  .herosectionTexts {
+    width: 100%;
+
+    max-width: 620px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .herosectionTexts h1 {
+    font-size:
+      clamp(2.5rem, 7vw, 3.3rem);
+  }
+
+  .herosectionTexts p {
+    max-width: 540px;
+
+    font-size: 1rem;
+
+    line-height: 1.65;
+  }
+
+  .herosectionImage {
+    width: 100%;
+
+    max-width: 560px;
+
+    justify-content: center;
+  }
+
+  .herosectionImage img {
+    width: 100%;
+
+    max-width: 520px;
+  }
+
+  .herosectionContact {
+    bottom: 0;
+
+    right: 0;
+
+    width: 145px;
+
+    height: 80px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .herosection {
+    padding:
+      55px 0 95px;
+  }
+
+  .herosectionWrapper {
+    width: 90%;
+
+    gap: 26px;
+  }
+
+  .herosectionTexts {
+    width: 100%;
+  }
+
+  .herosectionTexts h1 {
+    font-size:
+      clamp(2.15rem, 9vw, 2.75rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -0.8px;
+  }
+
+  .herosectionTexts p {
+    max-width: 430px;
+
+    margin-top: 14px;
+
+    font-size: 0.92rem;
+
+    line-height: 1.65;
+  }
+
+  .herosectionImage {
+    width: 100%;
+
+    max-width: 440px;
+  }
+
+  .herosectionImage img {
+    max-width: 100%;
+  }
+
+  .herosectionContact {
+    width: 125px;
+
+    height: 68px;
+
+    padding:
+      7px 13px;
+
+    border-radius:
+      55px 0 0 55px;
+  }
+
+  .herosectionContact > div {
+    width: 54px;
+
+    height: 54px;
+
+    padding: 3px;
+  }
+
+  .herosectionContact svg {
+    width: 33px;
+
+    height: 33px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .herosection {
+    padding:
+      45px 0 85px;
+  }
+
+  .herosectionWrapper {
+    width: 92%;
+
+    gap: 23px;
+  }
+
+  .herosectionTexts h1 {
+    font-size:
+      clamp(2rem, 10vw, 2.4rem);
+
+    line-height: 1.15;
+  }
+
+  .herosectionTexts p {
+    max-width: 330px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+  }
+
+  .herosectionImage {
+    max-width: 360px;
+  }
+
+  .herosectionContact {
+    width: 112px;
+
+    height: 62px;
+
+    padding:
+      6px 11px;
+  }
+
+  .herosectionContact > div {
+    width: 49px;
+
+    height: 49px;
+  }
+
+  .herosectionContact svg {
+    width: 29px;
+
+    height: 29px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .herosectionTexts,
+  .herosectionImage,
+  .herosectionContact {
+    animation: none;
+  }
+
+  .herosectionImage img {
+    animation: none;
+  }
+
+  .herosectionContact > div {
+    transition: none;
+  }
+
+}
+
+.valuesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 5.78rem;
+  margin-bottom: 4.06rem;
+  width: 90%;
+  /* max-width: 90%; */
+  max-width: 1440px;
+}
+
+.coreValues {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.coreValuesHeader {
+  text-transform: uppercase;
+  color: #003399;
+}
+
+.coreValuesPetals {
+  position: absolute;
+  top: 2rem;
+  left: -4.6rem;
+  z-index: 10;
+  width: 9.125rem;
+  height: 2.4575rem;
+}
+
+.coreValuesCardsContainer {
+  display: flex;
+  gap: 1.56rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.coreValuesCard {
+  display: flex;
+  width: 24.625rem;
+  height: 17.375rem;
+  max-height: 17.5rem;
+  padding: 1rem 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+
+  border-radius: 0.9375rem;
+  border-top: 1px solid #4c88ff;
+  background: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  transition:
+    transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  & h4 {
+    color: #003399;
+    text-align: center;
+    font-size: 1.06063rem;
+    font-weight: 700;
+    line-height: 1.59094rem;
+    text-transform: uppercase;
+  }
+
+  & h3 {
+    color: #1d1d1d;
+    text-align: center;
+    font-size: 2.12125rem;
+    font-weight: 700;
+    line-height: 3.18188rem;
+  }
+
+  & p {
+    color: #19181b;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    width: 16.125rem;
+  }
+}
+.coreValuesCardsContainer:has(.coreValuesCard:hover) {
+  gap: 2.5rem;
+}
+
+.coreValuesCard:hover {
+  transform: scale(1.1);
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  height: 3rem;
+}
+
+.marqueeInner {
+  animation: marquee 30s linear infinite;
+}
+
+.valueItem {
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.teamSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  margin-bottom: 4.06rem;
+  width: 90%;
+  /* max-width: 90%; */
+  max-width: 1440px;
+}
+
+.teamSectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & h1 {
+    color: #003399;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.575rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+
+  & p {
+    color: #333333;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    text-transform: capitalize;
+  }
+}
+
+.teamContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.19rem;
+  justify-content: space-between;
+}
+
+.memberCard {
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-width: 18.4375rem;
+  height: 18.4375rem;
+  border-radius: 1.47738rem;
+  padding-left: 1.44rem;
+  padding-right: 1.57rem;
+  padding-bottom: 1.11rem;
+  transition:
+    transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.teamContainer:has(.memberCard:hover) {
+  gap: 1.8rem;
+}
+
+.memberCard:hover {
+  transform: scale(1.1);
+}
+
+.memberDetail {
+  display: flex;
+  width: 15.42369rem;
+  padding: 0.9455rem 1.41825rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.19175rem;
+
+  border-radius: 2.95475rem;
+  background: rgba(255, 255, 255, 0.84);
+
+  & h3 {
+    color: #333333;
+    font-size: 1.18188rem;
+    font-weight: 600;
+    line-height: 1.41825rem;
+  }
+  & p {
+    color: #606060;
+    font-size: 0.59094rem;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+/* Tab Responsive */
+@media (max-width: 1480px) and (min-width: 1281px) {
+  .coreValuesCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .coreValuesCard {
+    width: 23rem;
+  }
+
+  .memberCard {
+    min-width: 17rem;
+  }
+}
+@media (max-width: 1280px) {
+  .teamContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1041px) and (min-width: 901px) {
+  .memberCard {
+    min-width: 15rem;
+  }
+}
+@media (max-width: 900px) and (min-width: 650px) {
+  .teamContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .coreValuesCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .coreValuesCard {
+    width: 21rem;
+  }
+
+  .coreValuesCard:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 732px) {
+  .coreValuesCard {
+    width: 20rem;
+  }
+}
+@media (max-width: 691px) {
+  .coreValuesCardsContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .coreValuesCard {
+    width: 24.625rem;
+  }
+
+  .teamContainer {
+    grid-template-columns: repeat(1, 23rem);
+    justify-content: center;
+  }
+
+  .memberCard {
+    height: 20.4375rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 400px) {
+
+  .coreValuesCard {
+    width: 21.625rem;
+  }
+}

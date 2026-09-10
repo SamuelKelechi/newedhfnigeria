@@ -1,0 +1,539 @@
+/* =========================================================
+   WELCOME SECTION
+========================================================= */
+
+.welcomeContainer {
+  position: relative;
+
+  width: 100%;
+  min-height: 300px;
+
+  display: flex;
+  justify-content: center;
+
+  /*
+    Smooth transition from the Hero section
+    into the white content area.
+  */
+  padding: 30px 0 100px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.7) 18%,
+      #ffffff 42%,
+      #ffffff 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.welcomeContainer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  left: -230px;
+  top: 80px;
+
+  border-radius: 50%;
+
+  background: rgba(30, 95, 187, 0.025);
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+.welcomeContainer::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -200px;
+  bottom: 20px;
+
+  border-radius: 50%;
+
+  background: rgba(58, 181, 74, 0.025);
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.welcomeContainerWrapper {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1250px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   LEFT IMAGE
+========================================================= */
+
+.welcomeContainerLeft {
+  width: 49%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: welcomeImageReveal 0.9s ease-out both;
+}
+
+.welcomeContainerLeft img {
+  display: block;
+
+  width: 100%;
+  max-width: 540px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.welcomeContainerLeft:hover img {
+  transform: translateY(-6px);
+
+  filter:
+    drop-shadow(0 15px 25px rgba(0, 0, 0, 0.08));
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.welcomeContainerRight {
+  width: 49%;
+
+  margin-top: 10px;
+
+  animation: welcomeContentReveal 0.9s 0.15s ease-out both;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.welcomeContainerHeader {
+  margin: 0 0 10px;
+
+  color: #003399;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.welcomeContainerSubheader {
+  margin: 5px 0 18px;
+
+  color: #333333;
+
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   PARAGRAPH
+========================================================= */
+
+.welcomeParagraph {
+  max-width: 580px;
+
+  margin: 10px 0 0;
+
+  color: #606060;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   READ MORE BUTTON
+========================================================= */
+
+.welcomeReadMoreBtn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 24px;
+
+  padding: 13px 28px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background-color: #3ab54a;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px rgba(58, 181, 74, 0.15);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.welcomeReadMoreBtn svg {
+  transition: transform 0.3s ease;
+}
+
+.welcomeReadMoreBtn:hover {
+  background-color: #32a942;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 11px 25px rgba(58, 181, 74, 0.25);
+}
+
+.welcomeReadMoreBtn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.welcomeReadMoreBtn:active {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes welcomeImageReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-40px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+  }
+}
+
+@keyframes welcomeContentReveal {
+  from {
+    opacity: 0;
+
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media screen and (max-width: 1000px) {
+
+  .welcomeContainer {
+    padding: 60px 0 80px;
+  }
+
+  .welcomeContainerWrapper {
+    gap: 45px;
+  }
+
+  .welcomeContainerSubheader {
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+  }
+
+  .welcomeParagraph {
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .welcomeContainer {
+    padding: 55px 0 75px;
+  }
+
+  .welcomeContainerWrapper {
+    width: 90%;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 40px;
+
+    text-align: center;
+  }
+
+  .welcomeContainerLeft {
+    width: 100%;
+
+    max-width: 550px;
+  }
+
+  .welcomeContainerLeft img {
+    max-width: 500px;
+  }
+
+  .welcomeContainerRight {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin-top: 0;
+  }
+
+  .welcomeContainerHeader {
+    font-size: 14px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .welcomeContainerSubheader {
+    font-size: clamp(1.9rem, 6vw, 2.5rem);
+
+    margin-bottom: 17px;
+  }
+
+  .welcomeParagraph {
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+
+  .welcomeReadMoreBtn {
+    margin-top: 25px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 650px) {
+
+  .welcomeContainer {
+    padding: 45px 0 60px;
+  }
+
+  .welcomeContainerWrapper {
+    width: 90%;
+
+    gap: 30px;
+  }
+
+  .welcomeContainerLeft {
+    width: 100%;
+  }
+
+  .welcomeContainerLeft img {
+    width: 100%;
+
+    max-width: 430px;
+  }
+
+  .welcomeContainerRight {
+    width: 100%;
+  }
+
+  .welcomeContainerHeader {
+    font-size: 13px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .welcomeContainerSubheader {
+    font-size: clamp(1.75rem, 8vw, 2.15rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+
+    margin-top: 5px;
+  }
+
+  .welcomeParagraph {
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    margin-top: 8px;
+  }
+
+  .welcomeReadMoreBtn {
+    padding: 11px 20px;
+
+    margin-top: 22px;
+
+    font-size: 0.9rem;
+  }
+
+  .welcomeContainer::before {
+    width: 240px;
+    height: 240px;
+
+    left: -170px;
+
+    top: 60px;
+  }
+
+  .welcomeContainer::after {
+    width: 220px;
+    height: 220px;
+
+    right: -160px;
+
+    bottom: 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 400px) {
+
+  .welcomeContainer {
+    padding: 40px 0 50px;
+  }
+
+  .welcomeContainerWrapper {
+    width: 92%;
+
+    gap: 25px;
+  }
+
+  .welcomeContainerHeader {
+    font-size: 12px;
+
+    letter-spacing: 1px;
+  }
+
+  .welcomeContainerSubheader {
+    font-size: 1.7rem;
+  }
+
+  .welcomeParagraph {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .welcomeReadMoreBtn {
+    padding: 10px 18px;
+
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .welcomeContainerLeft,
+  .welcomeContainerRight {
+    animation: none;
+  }
+
+  .welcomeContainerLeft img,
+  .welcomeReadMoreBtn,
+  .welcomeReadMoreBtn svg {
+    transition: none;
+  }
+}

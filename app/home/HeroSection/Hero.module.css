@@ -1,0 +1,830 @@
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.heroSection1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 10%,
+
+      rgba(255, 255, 255, 0) 72%,
+      rgba(255, 255, 255, 0.35) 84%,
+      rgba(255, 255, 255, 0.7) 94%,
+      #ffffff 100%
+    ),
+    linear-gradient(
+      to right,
+      #d8dce6 0%,
+      #e4e7ee 10%,
+      #f2f3f7 25%,
+      #ffffff 45%,
+      #ffffff 55%,
+      #f7f2fa 75%,
+      #efe6f5 90%,
+      #e8dcf0 100%
+    );
+
+  padding: 50px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.heroContainer {
+  width: 90%;
+  max-width: 1400px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 40px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.heroContent {
+  width: 45%;
+  padding-top: 20px;
+
+  animation: heroContentReveal 0.9s ease-out both;
+}
+
+.heroTitle {
+  margin: 0 0 24px;
+
+  font-size: clamp(2.8rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+
+  color: #1a1a2e;
+
+  letter-spacing: -1.5px;
+}
+
+.heroTitleHighlight {
+  position: relative;
+  display: inline-block;
+
+  color: #1e5fbb;
+}
+
+
+/* Animated subtle underline */
+
+.heroTitleHighlight::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 100%;
+  height: 3px;
+
+  background: #1e5fbb;
+  border-radius: 50%;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  animation: highlightReveal 0.8s 0.6s ease-out forwards;
+}
+
+
+.heroDescription {
+  max-width: 420px;
+
+  margin: 0 0 32px;
+
+  font-size: 20px;
+  line-height: 1.7;
+
+  color: #5a5a6e;
+
+  animation: fadeUp 0.8s 0.2s ease-out both;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.heroButtons {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  animation: fadeUp 0.8s 0.35s ease-out both;
+}
+
+
+/* Donate Button */
+
+.heroDonateBtn {
+  background-color: #4caf50;
+  color: #fff;
+
+  border: none;
+
+  padding: 14px 32px;
+
+  border-radius: 30px;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(76, 175, 80, 0.15);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.heroDonateBtn:hover {
+  background-color: #43a047;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(76, 175, 80, 0.25);
+}
+
+.heroDonateBtn:active {
+  transform: translateY(-1px);
+}
+
+
+/* Read More */
+
+.heroReadMoreBtn {
+  background-color: transparent;
+
+  color: #1a1a2e;
+
+  border: 1.5px solid #d0d0d0;
+
+  padding: 14px 28px;
+
+  border-radius: 30px;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.heroReadMoreBtn:hover {
+  border-color: #1a1a2e;
+
+  background-color: rgba(255, 255, 255, 0.45);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.heroReadMoreBtn svg {
+  transition: transform 0.3s ease;
+}
+
+.heroReadMoreBtn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   IMAGES SECTION
+========================================================= */
+
+.heroImages {
+  position: relative;
+
+  width: 50%;
+  height: 450px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  animation: heroImagesReveal 1s 0.15s ease-out both;
+}
+
+
+/* =========================================================
+   LEFT IMAGE COLUMN
+========================================================= */
+
+.heroImagesLeft {
+  position: relative;
+
+  width: 48%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* =========================================================
+   RIGHT IMAGE COLUMN
+========================================================= */
+
+.heroImagesRight {
+  position: relative;
+
+  width: 48%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   MAIN IMAGES
+========================================================= */
+
+.heroImagesLeft > img:not(.Icon1):not(.Icon2),
+.heroImagesRight > img:not(.profileIcon):not(.helpingHand) {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+/* Slight hover movement */
+
+.heroImagesLeft:hover > img:not(.Icon1):not(.Icon2) {
+  transform: translateY(-5px) rotate(-0.5deg);
+}
+
+.heroImagesRight:hover > img:not(.profileIcon):not(.helpingHand) {
+  transform: translateY(-5px) rotate(0.5deg);
+}
+
+
+/* =========================================================
+   DECORATIVE ICONS
+========================================================= */
+
+.helpingHand {
+  width: 150px;
+
+  margin-top: -8px;
+
+  animation:
+    floatingHand 4s ease-in-out infinite;
+}
+
+.profileIcon {
+  width: 35px;
+
+  margin-right: -190px;
+  margin-bottom: 15px;
+
+  animation:
+    floatingSmall 3.5s ease-in-out infinite;
+}
+
+.Icon1 {
+  width: 35px;
+
+  margin-bottom: -20px;
+  margin-left: -15px;
+
+  z-index: 100;
+
+  animation:
+    floatingSmallReverse 3.8s ease-in-out infinite;
+}
+
+.Icon2 {
+  width: 35px;
+
+  margin-top: -20px;
+  margin-left: -15px;
+
+  z-index: 100;
+
+  animation:
+    floatingSmall 4.2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   VALUES BAR
+========================================================= */
+
+.heroValuesBar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 40px;
+
+  padding: 40px 0;
+
+  margin-top: 10px;
+}
+
+.heroValue {
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  color: #8a8aa3;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.heroValue:hover {
+  color: #1e5fbb;
+
+  transform: translateY(-2px);
+}
+
+.heroValueSeparator {
+  color: #c0c0d0;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   ENTRANCE ANIMATIONS
+========================================================= */
+
+@keyframes heroContentReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroImagesReveal {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlightReveal {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   FLOATING ANIMATIONS
+========================================================= */
+
+@keyframes floatingHand {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatingSmall {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-7px) rotate(3deg);
+  }
+}
+
+@keyframes floatingSmallReverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(7px) rotate(-3deg);
+  }
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .heroContainer {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 20px;
+  }
+
+  .heroContent {
+    width: 100%;
+    max-width: 600px;
+
+    padding-top: 0;
+  }
+
+  .heroDescription {
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroButtons {
+    justify-content: center;
+  }
+
+  .heroImages {
+    width: 100%;
+
+    max-width: 550px;
+
+    height: 400px;
+
+    margin-top: 20px;
+  }
+
+  .heroValuesBar {
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .heroSection1 {
+    padding: 40px 0 0;
+  }
+
+  .heroContainer {
+    width: 90%;
+
+    padding: 0;
+
+    gap: 10px;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.3rem, 7vw, 2.8rem);
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    margin-bottom: 28px;
+  }
+
+  .heroImages {
+    width: 100%;
+
+    height: 320px;
+
+    margin-top: 10px;
+  }
+
+  .helpingHand {
+    width: 120px;
+  }
+
+  .profileIcon {
+    width: 30px;
+
+    margin-right: -145px;
+
+    margin-bottom: 8px;
+  }
+
+  .Icon1,
+  .Icon2 {
+    width: 30px;
+  }
+
+  .heroValuesBar {
+    gap: 16px;
+
+    padding: 0 0 25px;
+
+    margin-top: 5px;
+  }
+
+  .heroValue {
+    font-size: 0.95rem;
+  }
+
+  .heroValueSeparator {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+
+  .heroSection1 {
+    padding-top: 32px;
+  }
+
+  .heroContainer {
+    width: 90%;
+
+    gap: 5px;
+  }
+
+  .heroContent {
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+
+    line-height: 1.08;
+
+    margin-bottom: 20px;
+  }
+
+  .heroTitleHighlight::after {
+    height: 2px;
+
+    bottom: -3px;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    max-width: 95%;
+
+    margin-bottom: 25px;
+  }
+
+
+  /* Buttons */
+
+  .heroButtons {
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 10px;
+  }
+
+  .heroDonateBtn,
+  .heroReadMoreBtn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  /* Images */
+
+  .heroImages {
+    width: 100%;
+
+    height: 270px;
+
+    min-height: 250px;
+
+    margin-top: 5px;
+
+    padding: 0;
+  }
+
+  .heroImagesLeft,
+  .heroImagesRight {
+    width: 47%;
+  }
+
+
+  .helpingHand {
+    width: 100px;
+
+    margin-top: -5px;
+  }
+
+  .profileIcon {
+    width: 25px;
+
+    margin-right: -110px;
+
+    margin-bottom: 5px;
+  }
+
+  .Icon1,
+  .Icon2 {
+    width: 25px;
+  }
+
+  .Icon1 {
+    margin-left: -10px;
+  }
+
+  .Icon2 {
+    margin-left: -10px;
+  }
+
+
+  /* Values */
+
+  .heroValuesBar {
+    gap: 12px;
+
+    margin-top: 0;
+
+    padding: 0 0 20px;
+  }
+
+  .heroValue {
+    font-size: 0.82rem;
+  }
+
+  .heroValueSeparator {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .heroTitle {
+    font-size: 1.85rem;
+  }
+
+  .heroDescription {
+    font-size: 13px;
+  }
+
+  .heroImages {
+    height: 230px;
+
+    min-height: 220px;
+  }
+
+  .helpingHand {
+    width: 85px;
+  }
+
+  .profileIcon {
+    width: 22px;
+
+    margin-right: -95px;
+  }
+
+  .Icon1,
+  .Icon2 {
+    width: 22px;
+  }
+
+  .heroValue {
+    font-size: 0.75rem;
+  }
+
+  .heroValueSeparator {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .heroContent,
+  .heroImages,
+  .heroTitleHighlight::after,
+  .heroDescription,
+  .heroButtons,
+  .helpingHand,
+  .profileIcon,
+  .Icon1,
+  .Icon2 {
+    animation: none;
+  }
+
+  .heroDonateBtn,
+  .heroReadMoreBtn,
+  .heroReadMoreBtn svg,
+  .heroValue,
+  .heroValueSeparator,
+  .heroImagesLeft > img,
+  .heroImagesRight > img {
+    transition: none;
+  }
+}

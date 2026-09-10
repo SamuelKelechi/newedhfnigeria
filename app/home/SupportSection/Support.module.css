@@ -1,0 +1,957 @@
+/* =========================================================
+   SUPPORT SECTION
+========================================================= */
+
+.supportSection {
+  position: relative;
+
+  width: 100%;
+
+  padding: 5px 0 115px;
+
+  display: flex;
+  justify-content: center;
+
+  overflow: hidden;
+
+  /*
+    Soft transition from Project section.
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f8f9fb 50%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.supportSection::before {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  left: -280px;
+  top: 50px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 51, 153, 0.025);
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+.supportSection::after {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  right: -250px;
+  bottom: 20px;
+
+  border-radius: 50%;
+
+  background: rgba(58, 181, 74, 0.035);
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.wrapper {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.left {
+  flex: 1;
+
+  max-width: 570px;
+
+  animation: supportLeftReveal 0.8s ease-out both;
+}
+
+
+/* Section tag */
+
+.tag {
+  margin: 0 0 10px;
+
+  color: #003399;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+
+/* Heading */
+
+.title {
+  margin: 5px 0 0;
+
+  color: #333333;
+
+  font-size: clamp(
+    2rem,
+    3.2vw,
+    2.8rem
+  );
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+/* Description */
+
+.description {
+  max-width: 560px;
+
+  margin: 18px 0 10px;
+
+  color: #606060;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   DONATE AREA
+========================================================= */
+
+.donateHolder {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 25px;
+}
+
+
+/* Donate button */
+
+.donateBtn {
+  position: relative;
+
+  height: 46px;
+
+  min-width: 120px;
+
+  padding: 0 28px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #3ab54a;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(58, 181, 74, 0.18);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.donateBtn:hover {
+  background: #2fa640;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(58, 181, 74, 0.25);
+}
+
+.donateBtn:active {
+  transform: translateY(-1px);
+}
+
+
+/* Decorative image beside Donate */
+
+.donateBtnIcon {
+  width: 110px;
+
+  height: 30px;
+
+  margin-top: -5px;
+
+  margin-left: 10px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.donateHolder:hover .donateBtnIcon {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   RIGHT STATISTICS AREA
+========================================================= */
+
+.right {
+  flex: 1;
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 600px;
+
+  height: 320px;
+
+  animation: supportRightReveal 0.9s ease-out both;
+
+  animation-delay: 0.15s;
+}
+
+
+/* =========================================================
+   BASE STAT CARD
+========================================================= */
+
+.cardTopLeft,
+.cardTopRight,
+.cardBottom {
+  position: absolute;
+
+  width: 220px;
+
+  min-height: 125px;
+
+  padding: 28px 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  /*
+    Very subtle glass effect.
+  */
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(148, 163, 184, 0.35);
+
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.07);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   CARD POSITIONS
+========================================================= */
+
+.cardTopLeft {
+  top: 0;
+
+  left: 40px;
+
+  animation:
+    floatCard 5s ease-in-out infinite;
+}
+
+
+.cardTopRight {
+  top: 0;
+
+  right: 40px;
+
+  animation:
+    floatCard 5s ease-in-out infinite;
+
+  animation-delay: -2.5s;
+}
+
+
+.cardBottom {
+  bottom: 0;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  animation:
+    floatBottomCard 5s ease-in-out infinite;
+
+  animation-delay: -1.5s;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.cardTopLeft:hover,
+.cardTopRight:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(58, 181, 74, 0.3);
+
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+.cardBottom:hover {
+  transform:
+    translateX(-50%)
+    translateY(-8px);
+
+  border-color:
+    rgba(58, 181, 74, 0.3);
+
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+
+/* =========================================================
+   NUMBERS
+========================================================= */
+
+.cardTopLeft h3,
+.cardTopRight h3,
+.cardBottom h3 {
+  margin: 0 0 8px;
+
+  color: #1e293b;
+
+  font-size: 1.8rem;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.cardTopLeft p,
+.cardTopRight p,
+.cardBottom p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 0.9rem;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   ICON + TEXT
+========================================================= */
+
+.wrapIcon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+}
+
+.wrapIcon img {
+  width: 30px;
+
+  height: 30px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DECORATIVE VECTOR IMAGES
+========================================================= */
+
+.cardBottomLeft {
+  position: absolute;
+
+  width: 70px;
+
+  bottom: 45px;
+
+  left: 65px;
+
+  opacity: 0.9;
+
+  pointer-events: none;
+
+  animation:
+    decorativeFloat 4s ease-in-out infinite;
+}
+
+
+.cardBottomRight {
+  position: absolute;
+
+  width: 20px;
+
+  bottom: 65px;
+
+  right: 105px;
+
+  opacity: 0.85;
+
+  pointer-events: none;
+
+  animation:
+    decorativeFloat 4s ease-in-out infinite;
+
+  animation-delay: -2s;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes supportLeftReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+@keyframes supportRightReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* Floating top cards */
+
+@keyframes floatCard {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-7px);
+  }
+
+}
+
+
+/* Floating bottom card */
+
+@keyframes floatBottomCard {
+
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      translateY(-7px);
+  }
+
+}
+
+
+/* Decorative vectors */
+
+@keyframes decorativeFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-5px)
+      rotate(2deg);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .supportSection {
+    padding: 85px 0 90px;
+  }
+
+  .wrapper {
+    gap: 45px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .right {
+    height: 300px;
+  }
+
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottom {
+    width: 200px;
+
+    padding: 25px 20px;
+  }
+
+  .cardTopLeft {
+    left: 15px;
+  }
+
+  .cardTopRight {
+    right: 15px;
+  }
+
+  .cardBottomLeft {
+    left: 35px;
+  }
+
+  .cardBottomRight {
+    right: 65px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .wrapper {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 55px;
+  }
+
+  .left {
+    width: 100%;
+
+    max-width: 650px;
+
+    text-align: center;
+  }
+
+  .description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .donateHolder {
+    justify-content: center;
+  }
+
+  .right {
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 300px;
+
+    margin-top: 5px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .supportSection {
+    padding: 65px 0 75px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #f8f9fb 45%,
+        #ffffff 100%
+      );
+  }
+
+  .wrapper {
+    width: 90%;
+
+    gap: 40px;
+  }
+
+  .tag {
+    font-size: 13px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .title {
+    font-size:
+      clamp(1.8rem, 8vw, 2.15rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+  }
+
+  .description {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+  .donateHolder {
+    margin-top: 22px;
+  }
+
+  .donateBtn {
+    height: 44px;
+
+    min-width: 115px;
+
+    padding: 0 24px;
+
+    font-size: 0.95rem;
+  }
+
+  .donateBtnIcon {
+    width: 90px;
+
+    height: 28px;
+  }
+
+
+  /* Statistics */
+
+  .right {
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 0;
+  }
+
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottom {
+    position: relative;
+
+    top: auto;
+
+    right: auto;
+
+    bottom: auto;
+
+    left: auto;
+
+    width: 100%;
+
+    min-height: 125px;
+
+    padding: 25px 15px;
+
+    transform: none;
+
+    animation: none;
+  }
+
+  .cardBottom {
+    grid-column:
+      1 / -1;
+
+    width: calc(50% - 7.5px);
+
+    justify-self: center;
+  }
+
+  .cardBottomLeft,
+  .cardBottomRight {
+    display: none;
+  }
+
+  .cardTopLeft:hover,
+  .cardTopRight:hover,
+  .cardBottom:hover {
+    transform:
+      translateY(-5px);
+  }
+
+  .cardTopLeft h3,
+  .cardTopRight h3,
+  .cardBottom h3 {
+    font-size: 1.55rem;
+  }
+
+  .cardTopLeft p,
+  .cardTopRight p,
+  .cardBottom p {
+    font-size: 0.82rem;
+  }
+
+  .wrapIcon {
+    gap: 7px;
+  }
+
+  .wrapIcon img {
+    width: 26px;
+
+    height: 26px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .supportSection {
+    padding: 55px 0 65px;
+  }
+
+  .wrapper {
+    width: 92%;
+
+    gap: 35px;
+  }
+
+  .description {
+    font-size: 13.5px;
+
+    line-height: 1.75;
+  }
+
+  .donateHolder {
+    flex-wrap: nowrap;
+  }
+
+  .donateBtn {
+    min-width: 110px;
+
+    padding: 0 20px;
+  }
+
+  .donateBtnIcon {
+    width: 80px;
+
+    margin-left: 7px;
+  }
+
+
+  .right {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottom {
+    width: 100%;
+
+    grid-column: auto;
+  }
+
+  .cardBottom {
+    justify-self: stretch;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .wrapper {
+    width: 94%;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottom {
+    min-height: 115px;
+
+    padding: 22px 14px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .left,
+  .right,
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottom,
+  .cardBottomLeft,
+  .cardBottomRight {
+    animation: none;
+  }
+
+  .donateBtn,
+  .donateBtnIcon,
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottom {
+    transition: none;
+  }
+
+}

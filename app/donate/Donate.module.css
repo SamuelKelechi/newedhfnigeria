@@ -1,0 +1,823 @@
+/* =========================================================
+   EDHF DONATE PAGE
+========================================================= */
+
+.donatePage {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f9fc;
+  color: #1f2937;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.donateHero {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 51, 153, 0.92),
+      rgba(0, 127, 183, 0.70)
+    );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+
+  width: min(900px, 90%);
+  text-align: center;
+  color: #ffffff;
+
+  animation: heroReveal 0.9s ease both;
+}
+
+.heroEyebrow {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  opacity: 0.9;
+}
+
+.heroContent h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.heroContent p {
+  margin: 24px auto 0;
+
+  max-width: 650px;
+
+  font-size: 19px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================================================
+   DONATION SECTION
+========================================================= */
+
+.donationSection {
+  position: relative;
+  z-index: 5;
+
+  width: min(1180px, 92%);
+  margin: -90px auto 0;
+}
+
+.donationCard {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.13);
+
+  overflow: hidden;
+
+  animation: cardReveal 0.8s ease 0.15s both;
+}
+
+
+/* =========================================================
+   DONATION INTRO
+========================================================= */
+
+.donationIntro {
+  padding: 55px 50px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #003399,
+      #006fb4
+    );
+
+  color: #ffffff;
+}
+
+.sectionEyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+
+  color: #4caf50;
+}
+
+.donationIntro .sectionEyebrow {
+  color: #b8f2c0;
+}
+
+.donationIntro h2 {
+  margin: 0 0 20px;
+
+  font-size: 42px;
+  line-height: 1.1;
+}
+
+.donationIntro > p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.paymentBadge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 35px;
+  padding: 14px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.paymentBadge span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.paymentBadge strong {
+  font-size: 17px;
+}
+
+.cardInfo {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 25px;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cardIcon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  font-size: 19px;
+}
+
+.cardInfo strong {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+.cardInfo p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.donationForm {
+  padding: 50px;
+  background: #ffffff;
+}
+
+.formHeader {
+  margin-bottom: 28px;
+}
+
+.formHeader h3 {
+  margin: 0 0 7px;
+
+  font-size: 25px;
+  color: #172033;
+}
+
+.formHeader p {
+  margin: 0;
+
+  font-size: 14px;
+  color: #7b8494;
+}
+
+.formField {
+  margin-bottom: 18px;
+}
+
+.formField label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #374151;
+}
+
+.formField input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid #dce1e8;
+  border-radius: 10px;
+
+  background: #fafbfc;
+
+  color: #1f2937;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.formField input::placeholder {
+  color: #a3aab5;
+}
+
+.formField input:focus {
+  border-color: #006fb4;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px rgba(0, 111, 180, 0.08);
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.amountInput {
+  position: relative;
+}
+
+.amountInput > span {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 17px;
+  font-weight: 800;
+
+  color: #006fb4;
+}
+
+.amountInput input {
+  padding-left: 35px;
+}
+
+
+/* =========================================================
+   PAY BUTTON
+========================================================= */
+
+.payButton {
+  width: 100%;
+  height: 52px;
+
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4caf50,
+      #35a844
+    );
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(76, 175, 80, 0.20);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.payButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(76, 175, 80, 0.28);
+}
+
+.payButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.payButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secureNote {
+  margin: 13px 0 0;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  color: #9aa2ae;
+}
+
+
+/* =========================================================
+   BANK SECTION
+========================================================= */
+
+.bankSection {
+  width: min(1120px, 90%);
+
+  margin: 90px auto 0;
+
+  text-align: center;
+}
+
+.bankHeader h2 {
+  margin: 0;
+
+  font-size: clamp(28px, 4vw, 40px);
+
+  color: #172033;
+}
+
+.bankHeader p {
+  max-width: 600px;
+
+  margin: 12px auto 0;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #737d8c;
+}
+
+.bankGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.bankCard {
+  position: relative;
+
+  padding: 30px;
+
+  text-align: left;
+
+  background: #ffffff;
+
+  border: 1px solid #e7ebf0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bankCard::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #003399,
+      #4caf50
+    );
+}
+
+.bankCard:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.10);
+}
+
+.bankTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bankLogoWrap {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #f7f9fc;
+
+  overflow: hidden;
+}
+
+.bankLogo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 7px;
+}
+
+.bankLabel {
+  padding: 7px 11px;
+
+  border-radius: 30px;
+
+  background: #eef8ef;
+
+  color: #3e9a47;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.bankCard h3 {
+  margin: 25px 0 15px;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  color: #4b5563;
+}
+
+.bankName {
+  font-size: 18px;
+  font-weight: 800;
+
+  color: #003399;
+}
+
+.accountNumber {
+  display: inline-block;
+
+  margin-top: 8px;
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+
+  background: #f2f5f9;
+
+  color: #172033;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.donationClosing {
+  width: min(800px, 90%);
+
+  margin: 90px auto 80px;
+
+  text-align: center;
+}
+
+.closingIcon {
+  width: 54px;
+  height: 54px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf7ec;
+
+  color: #4caf50;
+
+  font-size: 22px;
+
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.donationClosing h2 {
+  margin: 0;
+
+  font-size: clamp(25px, 4vw, 36px);
+
+  color: #172033;
+}
+
+.donationClosing p {
+  margin: 12px auto 0;
+
+  max-width: 600px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #737d8c;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .donateHero {
+    min-height: 450px;
+  }
+
+  .donationSection {
+    width: 92%;
+    margin-top: -60px;
+  }
+
+  .donationCard {
+    grid-template-columns: 1fr;
+  }
+
+  .donationIntro {
+    padding: 40px;
+  }
+
+  .donationForm {
+    padding: 40px;
+  }
+
+  .bankGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .donateHero {
+    min-height: 390px;
+  }
+
+  .heroContent {
+    width: 92%;
+  }
+
+  .heroEyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .heroContent h1 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  .heroContent p {
+    margin-top: 18px;
+
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .donationSection {
+    width: 94%;
+    margin-top: -30px;
+  }
+
+  .donationCard {
+    border-radius: 15px;
+  }
+
+  .donationIntro {
+    padding: 32px 24px;
+  }
+
+  .donationIntro h2 {
+    font-size: 32px;
+  }
+
+  .donationIntro > p {
+    font-size: 14px;
+  }
+
+  .donationForm {
+    padding: 30px 24px;
+  }
+
+  .formHeader h3 {
+    font-size: 22px;
+  }
+
+  .bankSection {
+    width: 92%;
+    margin-top: 65px;
+  }
+
+  .bankCard {
+    padding: 23px;
+  }
+
+  .bankCard h3 {
+    font-size: 14px;
+  }
+
+  .accountNumber {
+    font-size: 19px;
+  }
+
+  .donationClosing {
+    margin: 65px auto 60px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .heroContent h1 {
+    font-size: 29px;
+  }
+
+  .heroContent p {
+    font-size: 14px;
+  }
+
+  .donationIntro {
+    padding: 28px 20px;
+  }
+
+  .donationForm {
+    padding: 26px 20px;
+  }
+
+  .paymentBadge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .bankTop {
+    align-items: flex-start;
+  }
+
+  .bankLabel {
+    font-size: 8px;
+  }
+
+}
