@@ -9,7 +9,11 @@ import {
 
 import "./contactUs.css";
 
-const TwitterXIcon = ({ className }) => (
+const TwitterXIcon = ({
+  className,
+}: {
+  className?: string;
+}) =>  (
   <svg
     viewBox="0 0 24 24"
     aria-hidden="true"

@@ -9,7 +9,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isActive = (path) => {
+  const isActive = (path: string) => {
     if (path === "/") {
       return pathname === "/";
     }

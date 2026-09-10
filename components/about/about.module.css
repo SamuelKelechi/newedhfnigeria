@@ -971,3 +971,15 @@
     width: 21.625rem;
   }
 }
+
+.herosectionContact a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.herosectionContact a:hover {
+  transform: scale(1.1);
+}

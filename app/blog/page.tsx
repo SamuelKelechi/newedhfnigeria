@@ -713,7 +713,7 @@ export default function Blog() {
                           }`}
                           onClick={() =>
                             goToPage(
-                              page
+                              page as number
                             )
                           }
                         >

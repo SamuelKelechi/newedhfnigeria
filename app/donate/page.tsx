@@ -4,6 +4,33 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./Donate.module.css";
 
+declare global {
+  interface Window {
+    PaystackPop?: {
+      setup: (config: {
+        key: string;
+        email: string;
+        amount: number;
+        currency: string;
+        ref?: string;
+        metadata?: {
+          custom_fields?: Array<{
+            display_name: string;
+            variable_name: string;
+            value: string;
+          }>;
+        };
+        onClose?: () => void;
+        callback?: (response: {
+          reference: string;
+        }) => void;
+      }) => {
+        openIframe: () => void;
+      };
+    };
+  }
+}
+
 const PAYSTACK_PUBLIC_KEY =
   process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY;
 
@@ -29,7 +56,9 @@ export default function Donate() {
    * =========================================================
    */
 
-  const loadPaystack = () => {
+  const loadPaystack = (): Promise<
+  NonNullable<Window["PaystackPop"]>
+> => {
     return new Promise((resolve, reject) => {
       // Paystack already loaded
       if (window.PaystackPop) {
@@ -43,15 +72,19 @@ export default function Donate() {
       );
 
       if (existingScript) {
-        existingScript.addEventListener("load", () => {
-          resolve(window.PaystackPop);
-        });
+          existingScript.addEventListener("load", () => {
+            if (window.PaystackPop) {
+              resolve(window.PaystackPop);
+            } else {
+              reject(new Error("Paystack failed to initialize."));
+            }
+          });
 
-        existingScript.addEventListener("error", () => {
-          reject(new Error("Unable to load Paystack."));
-        });
+          existingScript.addEventListener("error", () => {
+            reject(new Error("Unable to load Paystack."));
+          });
 
-        return;
+          return;
       }
 
       const script = document.createElement("script");

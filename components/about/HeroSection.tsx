@@ -24,7 +24,12 @@ const HeroSection = () => {
         </div>
       </div>
       <div className={styles.herosectionContact}>
-        <div>
+        <a
+          href="https://wa.me/2347033959010?text=Hello%20EDHF%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20organization."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with EDHF on WhatsApp"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="41"
@@ -37,7 +42,7 @@ const HeroSection = () => {
               fill="#3AB54A"
             />
           </svg>
-        </div>
+        </a>
       </div>
     </section>
   );
