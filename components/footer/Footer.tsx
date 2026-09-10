@@ -34,7 +34,7 @@ export default function Footer() {
               <div className={styles.logoRing}></div>
 
               <Image
-                src="/logo.png"
+                src="/logo2.png"
                 alt="EDHF Logo"
                 width={60}
                 height={60}
