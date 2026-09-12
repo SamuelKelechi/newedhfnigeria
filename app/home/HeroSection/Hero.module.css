@@ -29,7 +29,7 @@
       #e8dcf0 100%
     );
 
-  padding: 50px 0 0;
+  padding: 50px 0;
 
   display: flex;
   flex-direction: column;
@@ -43,11 +43,9 @@
 .heroContainer {
   width: 90%;
   max-width: 1400px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   gap: 40px;
 }
 
@@ -59,7 +57,6 @@
 .heroContent {
   width: 45%;
   padding-top: 20px;
-
   animation: heroContentReveal 0.9s ease-out both;
 }
 

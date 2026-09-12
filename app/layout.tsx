@@ -3,14 +3,11 @@ import "./globals.css";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/Footer";
 
-
 export const metadata: Metadata = {
   title: "Elisha Development and Humanitarian Foundation",
   description: "Making Lives and Communities Better",
   icons: {
     icon: "/logo2.png",
-    shortcut: "/logo2.png",
-    apple: "/logo2.png",
   },
 };
 

@@ -74,7 +74,6 @@ export default function Blog() {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-
         setError("");
 
         const response = await fetch(
@@ -214,6 +213,59 @@ export default function Blog() {
   };
 
   /* =====================================================
+     CLEAN BLOG STORY
+  ===================================================== */
+
+  const cleanBlogStory = (story: string) => {
+    if (!story) {
+      return "";
+    }
+
+    /*
+     * Some recovered Firebase posts contain
+     * escaped HTML such as:
+     *
+     * \<p>Text\</p>
+     *
+     * Convert those back into normal HTML.
+     */
+    let cleanStory = story
+      .replace(/\\</g, "<")
+      .replace(/\\>/g, ">")
+      .replace(/\\"/g, '"')
+      .replace(/\\'/g, "'");
+
+    /*
+     * Convert Markdown headings into HTML.
+     *
+     * Example:
+     *
+     * ## Testing
+     *
+     * becomes:
+     *
+     * <h2>Testing</h2>
+     */
+
+    cleanStory = cleanStory.replace(
+      /^###\s+(.+)$/gm,
+      "<h3>$1</h3>"
+    );
+
+    cleanStory = cleanStory.replace(
+      /^##\s+(.+)$/gm,
+      "<h2>$1</h2>"
+    );
+
+    cleanStory = cleanStory.replace(
+      /^#\s+(.+)$/gm,
+      "<h1>$1</h1>"
+    );
+
+    return cleanStory.trim();
+  };
+
+  /* =====================================================
      RENDER FULL STORY
   ===================================================== */
 
@@ -221,36 +273,22 @@ export default function Blog() {
     if (!story) {
       return (
         <p>
-          No story is available for this
-          blog post.
+          No story is available for this blog
+          post.
         </p>
       );
     }
 
-    const paragraphs = story
-      .split(/\n\s*\n/)
-      .map((paragraph) =>
-        paragraph.trim()
-      )
-      .filter(Boolean);
+    const cleanStory =
+      cleanBlogStory(story);
 
-    if (paragraphs.length === 1) {
-      return (
-        <p className="storyParagraph">
-          {story}
-        </p>
-      );
-    }
-
-    return paragraphs.map(
-      (paragraph, index) => (
-        <p
-          key={`${selectedPost?.id}-story-${index}`}
-          className="storyParagraph"
-        >
-          {paragraph}
-        </p>
-      )
+    return (
+      <div
+        className="blogStoryContent"
+        dangerouslySetInnerHTML={{
+          __html: cleanStory,
+        }}
+      />
     );
   };
 

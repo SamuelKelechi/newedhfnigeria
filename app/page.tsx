@@ -5,6 +5,7 @@ import Project from "./home/ProjectCarousel/Project"
 import Support from "./home/SupportSection/Support"
 import Involved from "./home/Involved/Involved"
 import Event from "./home/Event/Event"
+import Blog from "./home/BlogSection/Blog"
 import Newsletter from "./home/Newsletter/Newsletter"
 import Testimonials from "./home/Testimonials/Testimonials"
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Support />
       <Involved />
       <Event />
+      <Blog />
       <Newsletter />
       <Testimonials />
     </>

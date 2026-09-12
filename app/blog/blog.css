@@ -7,12 +7,11 @@
   min-height: 100vh;
   overflow: hidden;
 
-   background:
+  background:
     linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0) 10%,
-
       rgba(255, 255, 255, 0) 72%,
       rgba(255, 255, 255, 0.35) 84%,
       rgba(255, 255, 255, 0.7) 94%,
@@ -28,8 +27,7 @@
       #f7f2fa 75%,
       #efe6f5 90%,
       #e8dcf0 100%
-);
-
+    );
 
   color: #222;
 
@@ -395,7 +393,7 @@
 .secondaryImage img,
 .recentImage img {
   object-fit: cover;
-
+  object-position: center 10%;
   transition:
     transform 600ms
     cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -473,11 +471,14 @@
     0.3rem
     0.75rem;
 
+  border: none;
   border-radius: 999px;
 
   background: #36b94b;
 
   color: #fff;
+
+  font-family: inherit;
 
   font-size: 0.68rem;
   font-weight: 600;
@@ -485,6 +486,8 @@
   line-height: 1;
 
   text-decoration: none;
+
+  cursor: pointer;
 
   transition:
     transform 250ms ease,
@@ -1038,7 +1041,10 @@
     width: 90%;
   }
 
-  /* FEATURED */
+
+  /* =====================================================
+     FEATURED
+  ===================================================== */
 
   .featuredPost {
     padding: 0.7rem;
@@ -1071,7 +1077,10 @@
     line-height: 1.55;
   }
 
-  /* SECONDARY */
+
+  /* =====================================================
+     SECONDARY
+  ===================================================== */
 
   .secondaryPosts {
     grid-template-columns: 1fr;
@@ -1095,7 +1104,10 @@
     font-size: 0.76rem;
   }
 
-  /* RECENT */
+
+  /* =====================================================
+     RECENT
+  ===================================================== */
 
   .recentSection {
     margin-top: 1.7rem;
@@ -1231,16 +1243,6 @@
   .recentImage img {
     transition: none;
   }
-}
-
-/* =========================================================
-   BLOG BUTTON RESET
-========================================================= */
-
-.readMore {
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
 }
 
 
@@ -1498,6 +1500,7 @@
 
 .blogModalImage img {
   object-fit: cover;
+  object-position: center 15%;
 }
 
 
@@ -1560,6 +1563,8 @@
 ========================================================= */
 
 .blogModalArticle {
+  width: 100%;
+
   color: #333;
 
   font-size: 0.9rem;
@@ -1567,65 +1572,269 @@
   line-height: 1.8;
 
   font-weight: 400;
+
+  overflow-wrap: anywhere;
 }
 
-.blogModalArticle p {
+
+/* =========================================================
+   RENDERED BLOG STORY
+========================================================= */
+
+.blogStoryContent {
+  width: 100%;
+
+  color: #333;
+
+  font-size: inherit;
+
+  line-height: inherit;
+}
+
+
+/* =========================================================
+   STORY PARAGRAPHS
+========================================================= */
+
+.blogStoryContent p {
   margin:
     0 0
     1rem;
+
+  color: #333;
+
+  font-size: inherit;
+
+  line-height: 1.8;
 }
 
-.blogModalArticle h1,
-.blogModalArticle h2,
-.blogModalArticle h3,
-.blogModalArticle h4 {
-  margin:
-    1.5rem 0
-    0.7rem;
+.blogStoryContent p:last-child {
+  margin-bottom: 0;
+}
 
+
+/* =========================================================
+   STORY HEADINGS
+========================================================= */
+
+.blogStoryContent h1,
+.blogStoryContent h2,
+.blogStoryContent h3,
+.blogStoryContent h4 {
   color: #111;
+
+  font-weight: 800;
 
   line-height: 1.35;
 }
 
-.blogModalArticle h3 {
+.blogStoryContent h1 {
+  margin:
+    1.8rem 0
+    0.8rem;
+
+  font-size: 1.55rem;
+}
+
+.blogStoryContent h2 {
+  margin:
+    1.6rem 0
+    0.75rem;
+
+  font-size: 1.3rem;
+}
+
+.blogStoryContent h3 {
+  margin:
+    1.4rem 0
+    0.65rem;
+
   font-size: 1.15rem;
 }
 
-.blogModalArticle h4 {
+.blogStoryContent h4 {
+  margin:
+    1.2rem 0
+    0.6rem;
+
   font-size: 1rem;
 }
 
-.blogModalArticle ul,
-.blogModalArticle ol {
+
+/* =========================================================
+   STORY TEXT FORMATTING
+========================================================= */
+
+.blogStoryContent strong {
+  font-weight: 700;
+}
+
+.blogStoryContent em {
+  font-style: italic;
+}
+
+.blogStoryContent u {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   STORY LISTS
+========================================================= */
+
+.blogStoryContent ul,
+.blogStoryContent ol {
   margin:
     0.8rem 0
     1rem;
 
-  padding-left: 1.4rem;
+  padding-left: 1.5rem;
 }
 
-.blogModalArticle li {
+.blogStoryContent ul {
+  list-style-type: disc;
+}
+
+.blogStoryContent ol {
+  list-style-type: decimal;
+}
+
+.blogStoryContent li {
   margin-bottom: 0.45rem;
+
+  line-height: 1.7;
 }
 
-.blogModalArticle img {
+
+/* =========================================================
+   STORY BLOCKQUOTE
+========================================================= */
+
+.blogStoryContent blockquote {
+  margin:
+    1.2rem 0;
+
+  padding:
+    0.9rem
+    1.1rem;
+
+  border-left:
+    4px solid
+    #36b94b;
+
+  border-radius:
+    0
+    0.4rem
+    0.4rem
+    0;
+
+  background:
+    #f7f7f7;
+
+  color: #555;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   STORY LINKS
+========================================================= */
+
+.blogStoryContent a {
+  color: #003399;
+
+  font-weight: 600;
+
+  text-decoration: underline;
+
+  transition:
+    color 200ms ease;
+}
+
+.blogStoryContent a:hover {
+  color: #36b94b;
+}
+
+
+/* =========================================================
+   STORY IMAGES
+========================================================= */
+
+.blogStoryContent img {
   display: block;
+
+  width: auto;
 
   max-width: 100%;
 
   height: auto;
 
   margin:
-    1.2rem auto;
+    1.3rem auto;
 
   border-radius: 0.6rem;
 }
 
-.blogModalArticle a {
-  color: #003399;
 
-  font-weight: 600;
+/* =========================================================
+   STORY HORIZONTAL RULE
+========================================================= */
+
+.blogStoryContent hr {
+  margin:
+    1.5rem 0;
+
+  border: 0;
+
+  border-top:
+    1px solid
+    #e3e3e3;
+}
+
+
+/* =========================================================
+   STORY CODE
+========================================================= */
+
+.blogStoryContent code {
+  padding:
+    0.15rem
+    0.35rem;
+
+  border-radius: 0.3rem;
+
+  background: #f1f1f1;
+
+  color: #333;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 0.88em;
+}
+
+.blogStoryContent pre {
+  overflow-x: auto;
+
+  margin:
+    1.2rem 0;
+
+  padding:
+    1rem;
+
+  border-radius: 0.6rem;
+
+  background: #f4f4f4;
+
+  line-height: 1.6;
+}
+
+.blogStoryContent pre code {
+  padding: 0;
+
+  background: transparent;
 }
 
 
@@ -1691,6 +1900,10 @@
       1.5rem
       2rem;
   }
+
+  .blogModalArticle {
+    font-size: 0.88rem;
+  }
 }
 
 
@@ -1754,12 +1967,37 @@
     line-height: 1.75;
   }
 
-  .blogModalArticle h3 {
+  .blogStoryContent p {
+    line-height: 1.75;
+  }
+
+  .blogStoryContent h1 {
+    font-size: 1.25rem;
+
+    margin:
+      1.4rem 0
+      0.7rem;
+  }
+
+  .blogStoryContent h2 {
+    font-size: 1.1rem;
+
+    margin:
+      1.3rem 0
+      0.65rem;
+  }
+
+  .blogStoryContent h3 {
     font-size: 1rem;
   }
 
-  .blogModalArticle h4 {
+  .blogStoryContent h4 {
     font-size: 0.9rem;
+  }
+
+  .blogStoryContent ul,
+  .blogStoryContent ol {
+    padding-left: 1.25rem;
   }
 }
 
@@ -1789,6 +2027,26 @@
 
     line-height: 1.7;
   }
+
+  .blogStoryContent p {
+    line-height: 1.7;
+  }
+
+  .blogStoryContent h1 {
+    font-size: 1.15rem;
+  }
+
+  .blogStoryContent h2 {
+    font-size: 1rem;
+  }
+
+  .blogStoryContent h3 {
+    font-size: 0.92rem;
+  }
+
+  .blogStoryContent h4 {
+    font-size: 0.86rem;
+  }
 }
 
 
@@ -1803,10 +2061,12 @@
     animation: none;
   }
 
-  .blogModalClose {
+  .blogModalClose,
+  .blogStoryContent a {
     transition: none;
   }
 }
+
 
 /* =========================================================
    BLOG PAGINATION
