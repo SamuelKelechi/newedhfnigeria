@@ -14,7 +14,7 @@ const Team = () => {
       image: "/Mr.James.jpg",
     },
     {
-      name: "James Adeleye Adesuyi",
+      name: "Titilope Mercy Olumofin",
       position: "Secretary",
       image: "/Mrs.Titi.jpg",
     },
@@ -24,12 +24,12 @@ const Team = () => {
       image: "/Miss.Toyin.jpg",
     },
     {
-      name: "Vanessa Linda",
+      name: "Vanessa Linda Gakwe",
       position: "Social worker",
       image: "/Mrs.Vanessa.jpg",
     },
     {
-      name: "Motunrayo Ogundipe",
+      name: "Motunrayo Uaboi",
       position: "Social worker",
       image: "/Mrs.Motunrayo.jpg",
     },

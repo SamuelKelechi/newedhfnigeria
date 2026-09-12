@@ -7,39 +7,27 @@ import styles from "./Testimonials.module.css";
 const testimonials = [
   {
     id: 1,
-    name: "Grace Okafor",
-    image: "/testimonial1.png",
-    text: "Thanks to EDHF Nigeria, I was able to complete my education through their scholarship support. Their help came at a time when I had almost given up. I’m now pursuing my dreams with confidence.",
+    name: "Comfort Odubanjo",
+    image: "/comfort.jpeg",
+    text: "Comfort Odubanjo is one of the young people empowered through the foundation’s skill acquisition support program. We sponsored her professional makeup training, and today she is doing excellently well as a makeup artist. Beyond makeup, Comfort is also a talented videographer and photographer, using her creative skills to build a better future for herself. Her story reflects how empowerment and opportunity can transform lives and create independence for young people.",
   },
   {
     id: 2,
-    name: "Grace Okafor",
-    image: "/testimonial1.png",
-    text: "Thanks to EDHF Nigeria, I was able to complete my education through their scholarship support. Their help came at a time when I had almost given up. I’m now pursuing my dreams with confidence.",
+    name: "Aminat Isiaka",
+    image: "/aminat.jpeg",
+    text: "Aminat Isiaka, a young Northern Nigerian girl, was in a very critical health condition when we met her. She appeared severely malnourished, weak, and lacked access to proper medical care. The foundation stepped in immediately by taking her to the hospital for proper diagnosis and treatment. Today, Aminat is healthy, stronger, and looking much better. Her recovery is a testimony to the importance of timely healthcare support and community compassion.",
   },
   {
     id: 3,
-    name: "Grace Okafor",
-    image: "/testimonial1.png",
-    text: "Thanks to EDHF Nigeria, I was able to complete my education through their scholarship support. Their help came at a time when I had almost given up. I’m now pursuing my dreams with confidence.",
+    name: "Mr. Emeka",
+    image: "/emeka.jpeg",
+    text: "Mr. Emeka is a businessman who deals in phones and phone accessories. After his shop was attacked by robbers and all his goods were stolen, he was left devastated and unable to continue his business. In search of help, he came to the foundation, and we supported him in getting back on his feet. Today, Mr. Emeka is back in business and rebuilding his livelihood with hope and confidence once again.",
   },
   {
     id: 4,
-    name: "Grace Okafor",
+    name: "Mr. Adekoyah",
     image: "/testimonial1.png",
-    text: "Thanks to EDHF Nigeria, I was able to complete my education through their scholarship support. Their help came at a time when I had almost given up. I’m now pursuing my dreams with confidence.",
-  },
-  {
-    id: 5,
-    name: "Grace Okafor",
-    image: "/testimonial1.png",
-    text: "Thanks to EDHF Nigeria, I was able to complete my education through their scholarship support. Their help came at a time when I had almost given up. I’m now pursuing my dreams with confidence.",
-  },
-  {
-    id: 6,
-    name: "Grace Okafor",
-    image: "/testimonial1.png",
-    text: "Thanks to EDHF Nigeria, I was able to complete my education through their scholarship support. Their help came at a time when I had almost given up. I’m now pursuing my dreams with confidence.",
+    text: "Mr. Adekoyah suffered a terrible accident that severely damaged one of his legs. Due to financial difficulties, he was left untreated for a long time and lived in constant pain without proper medical attention. The foundation intervened by covering his medical bills, ensuring he received the surgery and treatment he needed, including the amputation of the damaged leg to save his life. We also enrolled him in our elderly care support services, where nurses regularly check on his wellbeing. Today, Mr. Adekoyah has fully recovered and returned to his daily work as a bus driver. His story is one of resilience, care, and restored hope. We cannot possibly list every life we have touched because there are so many stories of transformation and support within our communities. Through healthcare assistance, empowerment programs, education support, business recovery, and humanitarian services, the Elisha Development and Humanitarian Foundation continues to fulfill its mission of making lives and communities better.",
   },
 ];
 
